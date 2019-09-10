@@ -1,0 +1,81 @@
+            .title {
+                padding:20px;
+                text-align:left;
+                font-family: "Arial Black", Gadget, sans-serif;
+                width:100%;
+                background-color:#458cff;
+                color:white;
+                line-height:30px;
+            }
+            
+            .dropdown {
+                float:right;
+                display:inline-block;
+            }
+            
+            .dropdown-content {
+                display:none;
+                position:absolute;
+                z-index:1;
+                width:75%;
+            }
+            
+            .dropdown-content a {
+                color:white;
+                display:block;
+                background-color: #458cff;
+                padding:12px 16px;
+                font-size:50%;
+                z-index:;
+                font-family:"Arial Black", Gadget, sans-serif;
+                text-decoration:none;
+            }
+
+            
+            .drplink {
+                display:block;
+                position:absolute;
+                z-index:;
+                background-color:white;
+                font-family:"Arial Black", Gadget, sans-serif;
+            }
+            
+            .dropbtn {
+                margin-right:10px;
+                padding-right:20px;
+                border-color:#458cff;
+                border-right:1px #458cff solid;
+                border-bottom:1px #458cff solid;
+                background-color:#458cff;
+                color:white;
+                font-size:75%;
+                font-family:"Arial Black", Gadget, sans-serif;
+            }
+            
+            .dog {
+                width:40px;
+                height:40px;
+                border-radius:50%;
+                padding:5px;
+                display:inline;
+                vertical-align:middle;
+            }
+            
+            .portrait {
+                height:relative;
+                width:50%;
+                float:left;
+            }
+            
+            .about-text {
+                text-align:left;
+                font-family:"Arial Black", Gadget, sans-serif;
+                width:45%;
+                height:relative;
+                display:inline-block;
+                margin-left:15px;
+            }
+            
+            .dropdown:hover .dropdown-content {display: block;}
+            .dropdown-content a:hover {background-color:#2376fc;}
+            .dropdown:hover .dropbtn {background-color: #2376fc;}
