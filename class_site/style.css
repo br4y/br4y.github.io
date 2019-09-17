@@ -1,0 +1,43 @@
+        .active {
+          background-color:blue;  
+        }
+        
+        .navbar{
+          list-style: none;
+          background-color: black;
+          overflow: hidden;
+          padding: 0;
+        }
+        
+        .navbar a, .dropdown div{
+          text-decoration: none;
+          color: white;
+          font-size: 24px;
+          padding: 16px;
+          display: inline-block;
+        }
+        .navbar li{
+          float: left;
+        }
+    
+        .navbar li:hover{
+          background-color: Coral;
+        }
+    
+        .dropdown-content{
+          list-style: none;
+          padding: 0;
+          display: none;
+          width:145px;
+          background-color:black;
+          position:absolute;
+          z-index:1;
+        }
+    
+        .dropdown-content li{
+          float:none;
+        }
+        
+        .dropdown:hover .dropdown-content{
+          display: block;
+        }
