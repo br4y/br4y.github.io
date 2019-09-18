@@ -79,3 +79,9 @@
             .dropdown:hover .dropdown-content {display: block;}
             .dropdown-content a:hover {background-color:#2376fc;}
             .dropdown:hover .dropbtn {background-color: #2376fc;}
+
+            .homeimg {
+                width:relative;
+                height:40%;
+                margin-left:10%;
+            }
