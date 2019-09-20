@@ -1,56 +1,68 @@
-    .title {
-        padding:20px;
-        text-align:left;
-        font-family: "Arial Black", Gadget, sans-serif;
-        width:100%;
-        background-color:#458cff;
-        color:white;
-        line-height:30px;
-    }
-    
-    .dropdown {
-        float:right;
-        display:inline-block;
-    }
-    
-    .dropdown-content {
-        display:none;
-        position:absolute;
-        z-index:1;
-        width:75%;
-    }
-    
-    .dropdown-content a {
-        color:white;
-        display:block;
+       .navbar{
         background-color: #458cff;
-        padding:12px 16px;
-        font-size:50%;
-        z-index:;
+        width:100%;
+        overflow: hidden;
         font-family:"Arial Black", Gadget, sans-serif;
-        text-decoration:none;
-    }
-    
-    
-    .drplink {
+      }
+      
+      .active {
+        background-color:#3d80eb;;
+      }
+      
+      .navbar a {
+        color: white;
+        font-size: 24px;
+        text-decoration: none;
+        padding:16px;
+        float:left;
+      }
+      
+      .links {
+        font-family:"Arial Black", Gadget, sans-serif;
+        background-color: #458cff;
+        color: white;
+        float: right;
+        text-decoration: none;
+        font-size: 24px;
+      }
+
+      .morelinks {
+        color: white;
+        font-size: 24px;
+        text-decoration: none;
+        padding:16px;
+      }
+
+      .navbar a:hover, .morelinks:hover {
+        background-color: #3d80eb;
+      }
+
+      .dropdown:hover .dropdown-content {
         display:block;
-        position:absolute;
-        z-index:;
-        background-color:white;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        z-index:  1;
+        display:none;
+        background-color: #458cff;
         font-family:"Arial Black", Gadget, sans-serif;
-    }
-    
-    .dropbtn {
-        margin-right:10px;
-        padding-right:20px;
-        border-color:#458cff;
-        border-right:1px #458cff solid;
-        border-bottom:1px #458cff solid;
-        background-color:#458cff;
-        color:white;
-        font-size:75%;
+      }
+
+      .dropdown {
         font-family:"Arial Black", Gadget, sans-serif;
-    }
+        background-color: #458cff;
+        color: white;
+        float: right;
+        text-decoration: none;
+        font-size: 24px;
+
+      }
+
+      .dropdown-content a{
+        float: none;
+        display:block;
+      }
     
     .dog {
         width:40px;
@@ -76,29 +88,45 @@
         margin-left:15px;
     }
     
-    .dropdown:hover .dropdown-content {display: block;}
-    .dropdown-content a:hover {background-color:#2376fc;}
-    .dropdown:hover .dropbtn {background-color: #2376fc;}
+    /*.dropdown:hover .dropdown-content {display: block;}*/
+    /*.dropdown-content a:hover {background-color:#2376fc;}*/
+    /*.dropdown:hover .dropbtn {background-color: #2376fc;}*/
     
     table {
         width:100%;
-        border: 1px double black;
     }
     
     .column1{
-        width:relative;
         height:40%;
         float:left;
+        padding-left:10%
     }
     
     .column2 {
-        width:relative;
         height:40%;
-        margin-left:25%;
+        margin-left:30%;
     }
     
     .column3 {
-        width:relative;
         height:40%;
         float: right;
+        padding-right:10%;
+    }
+    
+    .spacerow {
+        height:100%;
+        padding-top:50px;
+        color:white;
+        font-size:100px;
+    }
+    
+    .navbuttons {
+        margin-right:10px;
+        padding-right:20px;
+        background-color:#458cff;
+        display:inline-block;
+        text-align: right;
+        color:white;
+        font-size:75%;
+        font-family:"Arial Black", Gadget, sans-serif;
     }
