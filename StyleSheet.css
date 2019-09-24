@@ -74,24 +74,21 @@
     }
     
     .portrait {
-        height:relative;
-        width:50%;
+        width:28%;
         float:left;
-    }
+}
     
     .about-text {
         text-align:left;
+        font-size:20px;
+        padding-left:2.3%;
         font-family:"Arial Black", Gadget, sans-serif;
         width:45%;
-        height:relative;
         display:inline-block;
         margin-left:15px;
     }
     
-    /*.dropdown:hover .dropdown-content {display: block;}*/
-    /*.dropdown-content a:hover {background-color:#2376fc;}*/
-    /*.dropdown:hover .dropbtn {background-color: #2376fc;}*/
-    
+
     table {
         width:100%;
     }
