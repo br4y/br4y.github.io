@@ -1,0 +1,124 @@
+       .navbar{
+        background-color: #458cff;
+        width:100%;
+        overflow: hidden;
+        font-family:"Arial Black", Gadget, sans-serif;
+      }
+      
+      .active {
+        background-color:#3d80eb;;
+      }
+      
+      .navbar a {
+        color: white;
+        font-size: 24px;
+        text-decoration: none;
+        padding:16px;
+        float:left;
+      }
+      
+      .links {
+        font-family:"Arial Black", Gadget, sans-serif;
+        background-color: #458cff;
+        color: white;
+        float: right;
+        text-decoration: none;
+        font-size: 24px;
+      }
+
+      .morelinks {
+        color: white;
+        font-size: 24px;
+        text-decoration: none;
+        padding:16px;
+      }
+
+      .navbar a:hover, .morelinks:hover {
+        background-color: #3d80eb;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display:block;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        z-index:  1;
+        display:none;
+        background-color: #458cff;
+        font-family:"Arial Black", Gadget, sans-serif;
+      }
+
+      .dropdown {
+        font-family:"Arial Black", Gadget, sans-serif;
+        background-color: #458cff;
+        color: white;
+        float: right;
+        text-decoration: none;
+        font-size: 24px;
+
+      }
+
+      .navbar {
+        position:sticky;
+      }
+
+      .dropdown-content a{
+        float: none;
+        display:block;
+      }
+    
+    .portrait {
+      float:left;
+      height:75%;
+    }
+    
+    .about-text {
+        text-align:left;
+        font-size:20px;
+        padding-left:2.3%;
+        font-family:"Arial Black", Gadget, sans-serif;
+        width:90%;
+        display:inline-block;
+        margin-left:15px;
+    }
+    
+
+    .hometable {
+        height:100%;
+        padding-left:25%;
+    }
+    
+    .column1 {
+      padding-right:50px;
+      width:300px;
+      height:300px;
+    }
+    
+    .column2 {
+      width:300px;
+      height:300px;
+    }
+
+    .column3 {
+      padding-left:50px;
+      width:300px;
+      height:300px;
+    }
+  
+    .spacerow {
+        padding-top:50px;
+        color:white;
+        font-size:100px;
+    }
+    
+    .navbuttons {
+      margin-right:10px;
+      padding-right:20px;
+      background-color:#458cff;
+      display:inline-block;
+      text-align: right;
+      color:white;
+      font-size:75%;
+      font-family:"Arial Black", Gadget, sans-serif;
+    }
