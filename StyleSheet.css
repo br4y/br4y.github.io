@@ -38,11 +38,11 @@
       }
 
       .dropdown:hover .dropdown-content{
-        display:block !important;
+        display:block;
       }
 
       .dropdown-content {
-        /* position: absolute; */
+        position: absolute;
         z-index:  5;
         display:none;
         background-color: #458cff;
