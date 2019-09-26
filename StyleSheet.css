@@ -37,8 +37,8 @@
         background-color: #3d80eb;
       }
 
-      .dropdown:hover .dropdown-content {
-        display:block;
+      .morelinks:hover .dropdown-content {
+        display:inline;
       }
 
       .dropdown-content {
@@ -127,4 +127,4 @@
 git add .
 git commit -m "some message here"
 git push -u origin master
-*/
+ */
