@@ -42,7 +42,7 @@
       }
 
       .dropdown-content {
-        position: absolute;
+        position: fixed;
         z-index:  5;
         display:none;
         background-color: #458cff;
