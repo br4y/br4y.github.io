@@ -37,13 +37,13 @@
         background-color: #3d80eb;
       }
 
-      .dropdown:hover .dropdown-content a{
-        display:block;
+      .dropdown:hover .dropdown-content{
+        display:block !important;
       }
 
       .dropdown-content {
-        position: absolute;
-        z-index:  1;
+        /* position: absolute; */
+        z-index:  5;
         display:none;
         background-color: #458cff;
         font-family:"Arial Black", Gadget, sans-serif;
