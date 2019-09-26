@@ -37,8 +37,8 @@
         background-color: #3d80eb;
       }
 
-      .morelinks:hover .dropdown-content {
-        display:inline;
+      .dropdown:hover .dropdown-content {
+        display:block;
       }
 
       .dropdown-content {
