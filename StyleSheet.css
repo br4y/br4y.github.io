@@ -1,55 +1,56 @@
-       .navbar{
+        .navbar{
         background-color: #458cff;
         width:100%;
         overflow: hidden;
         font-family:"Arial Black", Gadget, sans-serif;
-      }
+        }
 
-      .active {
+        .active {
         background-color:#3d80eb;;
-      }
+        }
 
-      .navbar a {
+        .navbar a {
         color: white;
         font-size: 24px;
         text-decoration: none;
         padding:16px;
         float:left;
-      }
+        }
 
-      .links {
+        .links {
         font-family:"Arial Black", Gadget, sans-serif;
         background-color: #458cff;
         color: white;
+        display:inline;
         /* float: right; */
         text-decoration: none;
         font-size: 24px;
-      }
+        }
 
-      .morelinks {
+        .morelinks {
         color: white;
         font-size: 24px;
         text-decoration: none;
         padding:16px;
-      }
+        }
 
-      .navbar a:hover, .morelinks:hover {
+        .navbar a:hover, .morelinks:hover {
         background-color: #3d80eb;
-      }
+        }
 
-      .dropdown:hover .dropdown-content{
+        .dropdown:hover .dropdown-content{
         display:block;
-      }
+        }
 
-      .dropdown-content {
-        position: fixed;
+        .dropdown-content {
+        position:fixed;
         z-index:  5;
         display:none;
         background-color: #458cff;
         font-family:"Arial Black", Gadget, sans-serif;
-      }
+        }
 
-      .dropdown {
+        .dropdown {
         font-family:"Arial Black", Gadget, sans-serif;
         background-color: #458cff;
         color: white;
@@ -57,16 +58,16 @@
         text-decoration: none;
         font-size: 24px;
 
-      }
+        }
 
-      .navbar {
+        .navbar {
         position:sticky;
-      }
+        }
 
-      .dropdown-content a{
+        .dropdown-content a{
         float: none;
         display:block;
-      }
+        }
 
     .portrait {
       float:left;
