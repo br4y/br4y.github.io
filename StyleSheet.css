@@ -114,7 +114,7 @@
     }
 
     .caption {
-        padding:1000px;
+        margin:50px;
         text-align:center;
         font-family:"Arial Black", Gadget, sans-serif;
         font-size:20px;
@@ -139,6 +139,18 @@
 
     .contact {
         text-align:center;
+    }
+
+    .score {
+        float:right;
+        text-align:right;
+        display:inline;
+    }
+
+    footer {
+        text-align:center;
+        font-family:"Arial Black", Gadget, sans-serif;
+        font-size:10px;
     }
 
 /*
