@@ -162,6 +162,36 @@
         background-color:green;
     }
 
+    #left-pane{
+        width:60%;
+        height:100%;
+        float:left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:red;
+    }
+
+    #right-pane-top{
+        width:40%;
+        height:60%;
+        float:right;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:blue;
+    }
+
+    #right-pane-bottom{
+        width:40;
+        height:40%;
+        float:right;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:orange;
+    }
+
 /*
 git add .
 git commit -m "some message here"
