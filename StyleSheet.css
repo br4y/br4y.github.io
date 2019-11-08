@@ -172,9 +172,9 @@
         background-color:red;
     }
 
-    #right-pane-top{
+    #right-pane{
         width:40%;
-        height:60%;
+        height:100%;
         float:right;
         display: flex;
         align-items: center;
@@ -182,18 +182,83 @@
         background-color:blue;
     }
 
-    #right-pane-bottom{
-        width:40;
-        height:40%;
-        float:right;
-        display: flex;
+    #story-text{
+        position:absolute;
+        bottom: 50px;
+        top: 0px;
+        left: 60%;
+        right: 0px;
+        display:flex;
         align-items: center;
         justify-content: center;
+        background-color: pink;
+    }
+
+    #choices{
+        position:absolute;
+        bottom: 0px;
+        height: 50px;
+        left: 60%;
+        right: 0px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        background-color: yellow;
+    }
+
+    #b1{
+        display: inline-block;
         background-color:orange;
+        text-decoration: none;
+        font-family:"Arial Black", Gadget, sans-serif;
+        color: white;
+        size: 16px;
+        padding: 10px;
+        border-radius:8px;
+        margin:5px;
+    }
+
+    #b2{
+        display: inline-block;
+        background-color:orange;
+        text-decoration: none;
+        font-family:"Arial Black", Gadget, sans-serif;
+        color: white;
+        size: 16px;
+        padding: 10px;
+        border-radius:8px;
+        margin:5px;
+
+    }
+
+    #b3{
+        display: inline-block;
+        background-color:orange;
+        text-decoration: none;
+        font-family:"Arial Black", Gadget, sans-serif;
+        color: white;
+        size: 16px;
+        padding: 10px;
+        border-radius:8px;
+        margin:5px;
+
+    }
+
+    #b4{
+        display: inline-block;
+        background-color:orange;
+        text-decoration: none;
+        font-family:"Arial Black", Gadget, sans-serif;
+        color: white;
+        size: 16px;
+        padding: 10px;
+        border-radius:8px;
+        margin:5px;
+
     }
 
 /*
 git add .
-git commit -m "some message here"
+git commit -m "Message"
 git push -u origin master
  */
