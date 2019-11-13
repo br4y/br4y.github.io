@@ -181,6 +181,7 @@
 
     #story-text{
         position:absolute;
+        max-height:100%;
         bottom: 50px;
         top: 0px;
         left: 60%;
