@@ -60,6 +60,43 @@
 </div>
 
 <script>
+    
+    var pic = document.getElementById('storyimg');
+
+    var ptext1 = document.getElementById('p-text1');
+    var ptext2 = document.getElementById('p-text2');
+    var ptext3 = document.getElementById('p-text3');
+    var ptext4 = document.getElementById('p-text4');
+    
+    var b1 = document.getElemenyById('b1');
+    var b2 = document.getElemenyById('b2');
+    var b3 = document.getElemenyById('b3');
+    var b4 = document.getElemenyById('b4');
+
+    var state = "intro";
+
+function intro(){
+    
+    pic.src = "images/img_1.jpg"
+    
+    ptext1.innerHTML("This is the intro to my story :)");
+    ptext2.innerHTML(""); // empty quotes clears text
+    ptext3.innerHTML("");
+    ptext4.innerHTML("");
+
+    b1.style.display = block;
+    b2.style.display = block;
+    b3.style.display = none;
+    b4.style.display = none; 
+
+    b1.innerHTML("Yes");
+    b2.innerHTML("No");
+    b3.innerHTML("");
+    b4.innerHTML("");
+
+    
+
+}
 
 </script>
 
