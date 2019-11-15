@@ -23,82 +23,149 @@
  </div>
 
 <div id="container">
-    <div id="left-pane">
+    <div id="leftpane">
         <img id="storyimg" src="images/hamburger.png"></img>
     </div>
-    <div id="right-pane">
-        <div id="story-text">
-            <p id="p-text1">asdhjka hdjaksdhaskjd hakjdhajsd hwuadh w
+    <div id="rightpane">
+        <div id="storytext">
+            <p id="ptext1">asdhjka hdjaksdhaskjd hakjdhajsd hwuadh w
             asdkhawdhwauidaskiawjdakwd 
              wadAWdwa dwadwadwa Dwad DwafFgg g GGG GdawdWADAW
              wadawdWADWAdawd lkgpigsfjd ds flksfjo p ad
              asdlnad adia0 d-grljhtisnfd fad0w-ad0qw d </p>
-            <p id="p-text2">asdhjka hdjaksdhaskjd hakjdhajsd hwuadh w
+            <p id="ptext2">asdhjka hdjaksdhaskjd hakjdhajsd hwuadh w
             asdkhawdhwauidaskiawjdakwd 
              wadAWdwa dwadwadwa Dwad DwafFgg g GGG GdawdWADAW
              wadawdWADWAdawd lkgpigsfjd ds flksfjo p ad
              asdlnad adia0 d-grljhtisnfd fad0w-ad0qw d </p>
-            <p id="p-text3">asdhjka hdjaksdhaskjd hakjdhajsd hwuadh w
+            <p id="ptext3">asdhjka hdjaksdhaskjd hakjdhajsd hwuadh w
             asdkhawdhwauidaskiawjdakwd 
              wadAWdwa dwadwadwa Dwad DwafFgg g GGG GdawdWADAW
              wadawdWADWAdawd lkgpigsfjd ds flksfjo p ad
              asdlnad adia0 d-grljhtisnfd fad0w-ad0qw d </p>
-            <p id="p-text4">asdhjka hdjaksdhaskjd hakjdhajsd hwuadh w
+            <p id="ptext4">asdhjka hdjaksdhaskjd hakjdhajsd hwuadh w
             asdkhawdhwauidaskiawjdakwd 
              wadAWdwa dwadwadwa Dwad DwafFgg g GGG GdawdWADAW
              wadawdWADWAdawd lkgpigsfjd ds flksfjo p ad
              asdlnad adia0 d-grljhtisnfd fad0w-ad0qw d </p>
         </div>
         <div id="choices">
-            <a id="b1" href="#">1</a>
-            <a id="b2" href="#">2</a>
-            <a id="b3" href="#">3</a>
-            <a id="b4" href="#">4</a>
+            <a id="b1" onclick="bclick(1)" href="#">1</a>
+            <a id="b2" onclick="bclick(2)" href="#">2</a>
+            <a id="b3" onclick="bclick(3)" href="#">3</a>
+            <a id="b4" onclick="bclick(4)" href="#">4</a>
         </div>
     </div>
 
 </div>
 
 <script>
-    
     var pic = document.getElementById('storyimg');
-
-    var ptext1 = document.getElementById('p-text1');
-    var ptext2 = document.getElementById('p-text2');
-    var ptext3 = document.getElementById('p-text3');
-    var ptext4 = document.getElementById('p-text4');
     
-    var b1 = document.getElemenyById('b1');
-    var b2 = document.getElemenyById('b2');
-    var b3 = document.getElemenyById('b3');
-    var b4 = document.getElemenyById('b4');
-
+    var ptext1 = document.getElementById('ptext1');
+    var ptext2 = document.getElementById('ptext2');
+    var ptext3 = document.getElementById('ptext3');
+    var ptext4 = document.getElementById('ptext4');
+    
+    var b1 = document.getElementById('b1');
+    var b2 = document.getElementById('b2');
+    var b3 = document.getElementById('b3');
+    var b4 = document.getElementById('b4');
+    
     var state = "intro";
-
-function intro(){
     
-    pic.src = "images/img_1.jpg"
-    
-    ptext1.innerHTML("This is the intro to my story :)");
-    ptext2.innerHTML(""); // empty quotes clears text
-    ptext3.innerHTML("");
-    ptext4.innerHTML("");
+    intro();
 
-    b1.style.display = block;
-    b2.style.display = block;
-    b3.style.display = none;
-    b4.style.display = none; 
+    function intro(){
+        
+        pic.src = "images/hamburger.png";
+        
+        ptext1.innerHTML = "This is the intro to my story";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Continue";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
 
-    b1.innerHTML("Yes");
-    b2.innerHTML("No");
-    b3.innerHTML("");
-    b4.innerHTML("");
+    function spillDrink(){
+        
+        pic.src = "images/drink.png";
+        
+        ptext1.innerHTML = "This is the second step of my story";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "block";
+        b4.style.display = "block";
+        
+        state = "spillDrink"; 
+    }
 
-    
+    function cleanSpillAlone(){
+        
+        pic.src = "images/drink.png";
+        
+        ptext1.innerHTML = "This is the third step of my story";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+        state = "cleanSpillAlone"; 
+    }
 
-}
+    function bclick(button){
+        if(state == "intro"){
+            if (button == 1){
+                spillDrink();
+                state = "spillDrink";
+            }
+        else if(state == "spillDrink"){
+            if (button == 1){
+                cleanSpillAlone();
+                state = "cleanSpillAlone";
+        }
+            else if(button == 2){
+                cleanSpillAlone();
+                state = "cleanSpillAlone";
+        }
+            else if(button == 3){
+                cleanSpillAlone();
+                state = "cleanSpillAlone";
+        }
+            else if(button == 4){
+                cleanSpillAlone();
+                state = "cleanSpillAlone";
+        }
+        }
+        }
+        return false;
+    }
 
 </script>
-
 </body>
 </html>

@@ -161,7 +161,7 @@
         right: 5px;
     }
 
-    #left-pane{
+    #leftpane{
         width:60%;
         height:100%;
         float:left;
@@ -170,7 +170,7 @@
         justify-content: center;
     }
 
-    #right-pane{
+    #rightpane{
         width:40%;
         height:100%;
         float:right;
@@ -179,7 +179,7 @@
         justify-content: center;
     }
 
-    #story-text{
+    #storytext{
         position:absolute;
         max-height:100%;
         bottom: 50px;
@@ -213,17 +213,7 @@
         margin:5px;
     }
 
-    #storytext{
-        position: absolute;
-        bottom: 100px;
-        top: 0px;
-        left: 56%;
-        right: 0px;
-        justify-content: center;
-        padding: 8px;
-    }
-
-    #p-text1, #p-text2, #p-text3, #p-text4{
+    #ptext1, #ptext2, #ptext3, #ptext4{
         
     }
 
