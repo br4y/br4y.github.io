@@ -78,9 +78,9 @@
 
     function intro(){
         
-        pic.src = "images/hamburger.png";
+        pic.src = "images/fry.png";
         
-        ptext1.innerHTML = "This is the intro to my story";
+        ptext1.innerHTML = "Your name is Fry. <br><br> You are a dull child that never did well in school, but always had a passion for cooking. You decide that school is not important and you should drop out and pursue your passion of becoming a master chef. You get a job at The Burger Place in order to learn the basics of working with others in a restaurant setting. You love your job at The Burger place and you realize that it is your dream to become a manager at the fast food restaurant. After getting your job you begin working your way up the ladder in hopes of one day becoming a manager.";
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
@@ -96,9 +96,30 @@
 
     function spillDrink(){
         
-        pic.src = "images/drink.png";
+        pic.src = "images/wetfloor.png";
         
-        ptext1.innerHTML = "This is the second step of my story";
+        ptext1.innerHTML = "One day as you are continuing along your job, you hear a loud 'THWAP!'. You look over the counter where the cash registers are and notice a woman had tripped while carrying her soda back to her table, and spilled it everywhere! Obviously somebody is going to have to clean that up, and the janitor isn't coming for another 2 hours. <br><br> What do you do?";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Clean it yourself";
+        b2.innerHTML = "Ask for help cleaning";
+        b3.innerHTML = "Tell somebody else to clean it";
+        b4.innerHTML = "Pretend you don't notice";
+        
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "block";
+        b4.style.display = "block";
+        
+    }
+
+    function cleanSpillAlone(){
+        
+        pic.src = "images/cleanSpillAlone.png";
+        
+        ptext1.innerHTML = "This is the third step of my story";
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
@@ -110,13 +131,12 @@
         
         b1.style.display = "block";
         b2.style.display = "block";
-        b3.style.display = "block";
-        b4.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
         
-        state = "spillDrink"; 
     }
 
-    function cleanSpillAlone(){
+    function askForHelp(){
         
         pic.src = "images/drink.png";
         
@@ -135,36 +155,78 @@
         b3.style.display = "none";
         b4.style.display = "none";
         
-        state = "cleanSpillAlone"; 
+    }
+
+    function tellCoworkerToClean(){
+        
+        pic.src = "images/drink.png";
+        
+        ptext1.innerHTML = "This is the third step of my story";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function ignoreSpill(){
+        
+        pic.src = "images/drink.png";
+        
+        ptext1.innerHTML = "This is the third step of my story";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
     }
 
     function bclick(button){
         if(state == "intro"){
-            if (button == 1){
+            if(button == 1){
                 spillDrink();
                 state = "spillDrink";
             }
+        }
         else if(state == "spillDrink"){
-            if (button == 1){
+            if(button == 1){
                 cleanSpillAlone();
                 state = "cleanSpillAlone";
-        }
+            }
             else if(button == 2){
-                cleanSpillAlone();
-                state = "cleanSpillAlone";
-        }
+                askForHelp();
+                state = "askForHelp";
+             }
             else if(button == 3){
-                cleanSpillAlone();
-                state = "cleanSpillAlone";
-        }
+                tellCoworkerToClean();
+                state = "tellCoworkerToClean";
+            }
             else if(button == 4){
-                cleanSpillAlone();
-                state = "cleanSpillAlone";
-        }
-        }
+                ignoreSpill();
+                state = "ignoreSpill"
+            }
         }
         return false;
     }
+
 
 </script>
 </body>
