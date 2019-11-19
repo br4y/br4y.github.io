@@ -119,18 +119,18 @@
         
         pic.src = "images/cleanSpillAlone.png";
         
-        ptext1.innerHTML = "This is the third step of my story";
+        ptext1.innerHTML = "You decide to clean the spill alone for the sake of the resturant in order to protect the customer's experience.";
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
         
-        b1.innerHTML = "";
+        b1.innerHTML = "Continue";
         b2.innerHTML = "";
         b3.innerHTML = "";
         b4.innerHTML = "";
         
         b1.style.display = "block";
-        b2.style.display = "block";
+        b2.style.display = "none";
         b3.style.display = "none";
         b4.style.display = "none";
         
@@ -138,20 +138,20 @@
 
     function askForHelp(){
         
-        pic.src = "images/drink.png";
+        pic.src = "images/gethelp.png"; //asking for help
         
-        ptext1.innerHTML = "This is the third step of my story";
+        ptext1.innerHTML = "You ask a cashier to help you mop the spill. You two clean up the spill quickly and without any troubles. You go back to your station and get fryin'.";
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
         
-        b1.innerHTML = "";
+        b1.innerHTML = "Continue";
         b2.innerHTML = "";
         b3.innerHTML = "";
         b4.innerHTML = "";
         
         b1.style.display = "block";
-        b2.style.display = "block";
+        b2.style.display = "none";
         b3.style.display = "none";
         b4.style.display = "none";
         
@@ -159,15 +159,36 @@
 
     function tellCoworkerToClean(){
         
-        pic.src = "images/drink.png";
+        pic.src = "images/angrilyclean.png"; //:(
         
-        ptext1.innerHTML = "This is the third step of my story";
+        ptext1.innerHTML = "You tell a coworker to clean the spill and they do it reluctantly. Although they didn't do the best job, they still cleaned the spill. They get back to work angrily, and so do you.";
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
         
-        b1.innerHTML = "";
+        b1.innerHTML = "Back to work";
         b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function ignoreSpill(){
+        
+        pic.src = "images/managerslip.png"; 
+        
+        ptext1.innerHTML = "You ignored the spill and waited for somebody else to get to it.";
+        ptext2.innerHTML = " Your manager is walking around inspecting the resturant and slips and falls on the unattended spill! Being the hero you are, you decide to take him to the back and treat his injuries. In the medical supplies box, there is a bottle of rat poison and a bottle of advil.";
+        ptext3.innerHTML = "Which do you want to give to your manager to soothe his pain?";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Rat Poison";
+        b2.innerHTML = "Advil";
         b3.innerHTML = "";
         b4.innerHTML = "";
         
@@ -178,22 +199,64 @@
         
     }
 
-    function ignoreSpill(){
+    function praisedByManager(){
         
-        pic.src = "images/drink.png";
+        pic.src = "images/manager.png"; 
         
-        ptext1.innerHTML = "This is the third step of my story";
+        ptext1.innerHTML = "Your manager was watching you clean the spill by yourself the whole time! He thanks you for working hard and going the extra mile. <br><br>Would you like to help more?";
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
         
-        b1.innerHTML = "";
-        b2.innerHTML = "";
+        b1.innerHTML = "Get back to work";
+        b2.innerHTML = "Help some more";
         b3.innerHTML = "";
         b4.innerHTML = "";
         
         b1.style.display = "block";
         b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function backToWork(){
+        
+        pic.src = "images/drink.png"; 
+        
+        ptext1.innerHTML = "";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Get back to work";
+        b2.innerHTML = "Help some more";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function helpOutMore(){
+        
+        pic.src = "images/fry.png"; 
+        
+        ptext1.innerHTML = "You decide that you want to help out more and ask if there's anything else you can do to help.";
+        ptext2.innerHTML = "Your manager decides that you would make a great assistant, and you are 'promoted' against your will.";
+        ptext3.innerHTML = "You are promoted to assistant manager, but you can never become the manager yourself.";
+        ptext4.innerHTML = "Your dreams are crushed.";
+        
+        b1.innerHTML = "Start over";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
         b3.style.display = "none";
         b4.style.display = "none";
         
@@ -221,8 +284,34 @@
             }
             else if(button == 4){
                 ignoreSpill();
-                state = "ignoreSpill"
+                state = "ignoreSpill";
             }
+        }
+        else if(state == "cleanSpillAlone"){
+            if(button == 1){
+                praisedByManager();
+                state = "praisedByManager";
+            }
+        }
+        else if(state == "ignoreSpill"){
+            if(button == 1){
+                giveRatPoison();
+                state = "giveRatPoison";
+            }
+            if(button == 2){
+                giveAdvil();
+                state = "giveAdvil";
+            }
+        else if(state == "praisedByManager"){
+            if(button == 1){
+                backToWork();
+                state = "backToWork";
+            }
+            if(button == 2){
+                helpOutMore();
+                state = "helpOutMore";
+            }
+        }
         }
         return false;
     }
