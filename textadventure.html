@@ -159,7 +159,7 @@
 
     function tellCoworkerToClean(){
         
-        pic.src = "images/angrilyclean.png"; //:(
+        pic.src = "images/angrilyclean.png";
         
         ptext1.innerHTML = "You tell a coworker to clean the spill and they do it reluctantly. Although they didn't do the best job, they still cleaned the spill. They get back to work angrily, and so do you.";
         ptext2.innerHTML = "";
@@ -220,17 +220,80 @@
         
     }
 
+    function getWorking(){
+        
+        pic.src = "images/fryworking.png"; 
+        
+        ptext1.innerHTML = "After helping your manager, you go back to your fry station and continue making fries.";
+        ptext2.innerHTML = "Your manager is becoming tired of his job and you have impressed him a lot recently. ";
+        ptext3.innerHTML = "Are you ready to become a manager?";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Accept";
+        b2.innerHTML = "Decline";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+    
+    function acceptPromo(){
+        
+        pic.src = "images/frypride.png"; 
+        
+        ptext1.innerHTML = "Your manager trains you thoroughly and you are finally ready to put on that uniform and boss people around.";
+        ptext2.innerHTML = "It feels good. Congratulations Fry.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Restart";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function declinePromo(){
+        
+        pic.src = "images/frycry.png"; 
+        
+        ptext1.innerHTML = "Your manager is dissapointed that you declined his offer of a promotion. He will not bug you about the issue anymore.";
+        ptext2.innerHTML = "You are sad you have missed your opportunity to become manager.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Restart";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
     function backToWork(){
         
-        pic.src = "images/drink.png"; 
+        pic.src = "images/fryworking.png"; 
         
-        ptext1.innerHTML = "";
+        ptext1.innerHTML = "You return to your station and notice it is in great need of a clean. You have a multitude of cleaning supplies at your disposal, but that would take a long time. Do you want to clean it with water and get it over with, or spend an hour cleaning it with the supplies provided.";
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
         
-        b1.innerHTML = "Get back to work";
-        b2.innerHTML = "Help some more";
+        b1.innerHTML = "Use water";
+        b2.innerHTML = "Use cleaning supplies";
         b3.innerHTML = "";
         b4.innerHTML = "";
         
@@ -302,16 +365,50 @@
                 giveAdvil();
                 state = "giveAdvil";
             }
+        }
         else if(state == "praisedByManager"){
             if(button == 1){
-                backToWork();
-                state = "backToWork";
+                getWorking();
+                state = "getWorking";
             }
             if(button == 2){
                 helpOutMore();
                 state = "helpOutMore";
             }
         }
+        else if(state == "askForHelp"){
+            if(button == 1){
+                backToWork();
+                state = "backToWork";
+            }
+        }
+        else if(state == "tellCoworkerToClean"){
+            if(button == 1){
+                backToWork();
+                state = "backToWork";
+            }
+        }
+        else if(state == "getWorking"){
+            if(button == 1){
+                acceptPromo();
+                state = "acceptPromo";
+            }
+            if(button == 2){
+                declinePromo();
+                state = "declinePromo";
+            }
+        }
+        else if(state == "acceptPromo"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+        else if(state == "declinePromo"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
         }
         return false;
     }
