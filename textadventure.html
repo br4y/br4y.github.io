@@ -303,6 +303,48 @@
         b4.style.display = "none";
         
     }
+    
+    function cleanCorrectly(){
+        
+        pic.src = "images/.png"; //spiffy fry machine
+        
+        ptext1.innerHTML = "You successfully wasted an entire hour cleaning the fry machine. You whip up a few batches and quickly become hungry. It wouldn't hurt to snack on a couple fries. Right?";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Have a snack";
+        b2.innerHTML = "Control yourself";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function frySplosion(){
+        
+        pic.src = "images/.png"; //frysplosion
+        
+        ptext1.innerHTML = "Not only did you forget to turn off the fry cooker before cleaning it, but water splashed into the cooking oil and the machine exploded!";
+        ptext2.innerHTML = "It was only a matter of time";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Restart";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
 
     function helpOutMore(){
         
@@ -315,6 +357,69 @@
         
         b1.innerHTML = "Start over";
         b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function caughtSnackin(){
+        
+        pic.src = "images/.png"; //:flushed: caught eating fries
+        
+        ptext1.innerHTML = "That's awkward... Your manager walked by right as you were shoving a handful of fries into your mouth.";
+        ptext2.innerHTML = "Your manager decided it's time to let you go";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Start over";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function stillRespectable(){
+        
+        pic.src = "images/.png"; //empty fries
+        
+        ptext1.innerHTML = "Your snack break didn't have any drastic consequences this time; you're still respected by your coworkers.";
+        ptext2.innerHTML = "However, you do seem to be running low on fries. Do you want to go all the way back in to the freezer?";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Restock";
+        b2.innerHTML = "No thanks";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+    
+    function helpOutMore(){
+        
+        pic.src = "images/.png"; //fry having a snack
+        
+        ptext1.innerHTML = "You eat a few fresh fries and nobody notices. Would you like a few more?";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Back to work";
+        b2.innerHTML = "Have a snack";
         b3.innerHTML = "";
         b4.innerHTML = "";
         
@@ -405,6 +510,60 @@
             }
         }
         else if(state == "declinePromo"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+        else if(state == "helpOutMore"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+        else if(state == "backToWork"){
+            if(button = 1){
+                frySplosion();
+                state = "frySplosion";
+            }
+        }
+        else if(state == "cleanCorrectly"){
+            if(button == 1){
+                haveSnack();
+                state = "haveSnack"
+            }
+            if(button == 2){
+                stillRespectable();
+                state = "stillRespectable";
+            }
+        }
+        else if(state == "haveSnack"){
+            if(button == 1){
+                stillRespectable();
+                state = "stillRespectable";
+            }
+            if(button == 2){
+                caughtSnackin();
+                state = "caughtSnackin";
+            }
+        }
+        else if(state == "caughtSnackin"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+        else if(state == "stillRespectable"){
+            if(button == 1){
+                restockFries();
+                state = "restockFries"
+            }
+            if(button == 2){
+                dontRestock();
+                state = "dontRestock";
+            }
+        }
+        else if(state == "frySplosion"){
             if(button == 1){
                 intro();
                 state = "intro";
