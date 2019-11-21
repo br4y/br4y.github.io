@@ -24,30 +24,14 @@
 
 <div id="container">
     <div id="leftpane">
-        <img id="storyimg" src="images/hamburger.png"></img>
+        <img id="storyimg" src="images/hamburger.png"></img> 
     </div>
     <div id="rightpane">
         <div id="storytext">
-            <p id="ptext1">asdhjka hdjaksdhaskjd hakjdhajsd hwuadh w
-            asdkhawdhwauidaskiawjdakwd 
-             wadAWdwa dwadwadwa Dwad DwafFgg g GGG GdawdWADAW
-             wadawdWADWAdawd lkgpigsfjd ds flksfjo p ad
-             asdlnad adia0 d-grljhtisnfd fad0w-ad0qw d </p>
-            <p id="ptext2">asdhjka hdjaksdhaskjd hakjdhajsd hwuadh w
-            asdkhawdhwauidaskiawjdakwd 
-             wadAWdwa dwadwadwa Dwad DwafFgg g GGG GdawdWADAW
-             wadawdWADWAdawd lkgpigsfjd ds flksfjo p ad
-             asdlnad adia0 d-grljhtisnfd fad0w-ad0qw d </p>
-            <p id="ptext3">asdhjka hdjaksdhaskjd hakjdhajsd hwuadh w
-            asdkhawdhwauidaskiawjdakwd 
-             wadAWdwa dwadwadwa Dwad DwafFgg g GGG GdawdWADAW
-             wadawdWADWAdawd lkgpigsfjd ds flksfjo p ad
-             asdlnad adia0 d-grljhtisnfd fad0w-ad0qw d </p>
-            <p id="ptext4">asdhjka hdjaksdhaskjd hakjdhajsd hwuadh w
-            asdkhawdhwauidaskiawjdakwd 
-             wadAWdwa dwadwadwa Dwad DwafFgg g GGG GdawdWADAW
-             wadawdWADWAdawd lkgpigsfjd ds flksfjo p ad
-             asdlnad adia0 d-grljhtisnfd fad0w-ad0qw d </p>
+            <p id="ptext1">place</p>
+            <p id="ptext2">holder</p>
+            <p id="ptext3">text</p>
+            <p id="ptext4"></p>
         </div>
         <div id="choices">
             <a id="b1" onclick="bclick(1)" href="#">1</a>
@@ -204,6 +188,7 @@
         pic.src = "images/.png"; //ded manny
         
         ptext1.innerHTML = "You give your manager rat poison in hopes of getting his position.";
+        ptext2.innerHTML = "";
         ptext3.innerHTML = "He doesn't look so good.";
         ptext4.innerHTML = "";
         
@@ -221,7 +206,7 @@
 
     function giveAdvil(){
         
-        pic.src = "images/.png"; //manny feels better until the amby comes
+        pic.src = "images/advil.png"; 
         
         ptext1.innerHTML = "You give your manager some advil in hopes of him feeling a little bit better while the ambulance you called is on its way. ";
         ptext3.innerHTML = "He appreciates your help a lot!";
@@ -262,7 +247,7 @@
 
     function passDownPos(){
         
-        pic.src = "images/.png"; // babie face fry
+        pic.src = "images/yay.png"; 
         
         ptext1.innerHTML = "Your manager is very thankful that you helped him with his injury. He decides to step down from his position as manager, and he hands it down to you.";
         ptext2.innerHTML = "Life is good.";
@@ -532,7 +517,7 @@
 
     function fryStarve(){
         
-        pic.src = "images/.png"; //fry dead in the freezer
+        pic.src = "images/fryfrozen.png"; 
         
         ptext1.innerHTML = "With nothing to eat besides frozen fries, you decide it's just better if you starved to death.";
         ptext2.innerHTML = "It was a good run";
@@ -553,7 +538,7 @@
 
     function fryPoison(){
         
-        pic.src = "images/.png"; //fry dead in the freezer ppoison
+        pic.src = "images/fryguydie.png";
         
         ptext1.innerHTML = "Maybe you should cook the fries before you eat them so the chemicals can get cooked out.";
         ptext2.innerHTML = "You ate a handful of preservative-packed frozen fries and died.";
@@ -574,7 +559,7 @@
 
     function waitForAmbulance(){
         
-        pic.src = "images/.png"; //manny in da amby
+        pic.src = "images/thanks.png"; 
 
         ptext1.innerHTML = "The ambulance arrives and you help your manager inside. He thanks you for all of your help.";
         ptext2.innerHTML = "";
@@ -618,7 +603,7 @@
         
         pic.src = "images/.png"; //manny ded
 
-        ptext1.innerHTML = "Your swift offering of yourself for the manager position rises suspicion of the real cause of your manager's death.";
+        ptext1.innerHTML = "Your swift offering of yourself for the manager position raises suspicion of the real cause of your manager's death.";
         ptext2.innerHTML = "The police start an investigation into your managers death.";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
