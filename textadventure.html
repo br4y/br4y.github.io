@@ -199,6 +199,46 @@
         
     }
 
+    function giveRatPoison(){
+        
+        pic.src = "images/.png"; //ded manny
+        
+        ptext1.innerHTML = "You give your manager rat poison in hopes of getting his position.";
+        ptext3.innerHTML = "He doesn't look so good.";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Continue";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function giveAdvil(){
+        
+        pic.src = "images/.png"; //manny feels better until the amby comes
+        
+        ptext1.innerHTML = "You give your manager some advil in hopes of him feeling a little bit better while the ambulance you called is on its way. ";
+        ptext3.innerHTML = "He appreciates your help a lot!";
+        ptext4.innerHTML = "An ambulance is on the way";
+        
+        b1.innerHTML = "Continue";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
     function praisedByManager(){
         
         pic.src = "images/manager.png"; 
@@ -215,6 +255,24 @@
         
         b1.style.display = "block";
         b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function passDownPos(){
+        
+        pic.src = "images/.png"; // babie face fry
+        
+        ptext1.innerHTML = "Your manager is very thankful that you helped him with his injury. He decides to step down from his position as manager, and he hands it down to you.";
+        ptext2.innerHTML = "Life is good.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Restart";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
         b3.style.display = "none";
         b4.style.display = "none";
         
@@ -514,6 +572,90 @@
         
     }
 
+    function waitForAmbulance(){
+        
+        pic.src = "images/.png"; //manny in da amby
+
+        ptext1.innerHTML = "The ambulance arrives and you help your manager inside. He thanks you for all of your help.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Continue";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function mannyDies(){
+        
+        pic.src = "images/.png"; //manny ded
+
+        ptext1.innerHTML = "Your manager has been successfully poisoned. After his death, corporate comes down and looks for a replacement.";
+        ptext2.innerHTML = "You offer yourself up for the position.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Continue";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function causeSus(){
+        
+        pic.src = "images/.png"; //manny ded
+
+        ptext1.innerHTML = "Your swift offering of yourself for the manager position rises suspicion of the real cause of your manager's death.";
+        ptext2.innerHTML = "The police start an investigation into your managers death.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Continue";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function getProsecuted(){
+        
+        pic.src = "images/.png"; //fry get arrested 
+
+        ptext1.innerHTML = "The police arrive and they put you in the back of their car. You have been found guilty for the murder of your manager and you've been sentenced to life in prison.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Restart";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
     function bclick(button){
         if(state == "intro"){
             if(button == 1){
@@ -550,7 +692,7 @@
                 giveRatPoison();
                 state = "giveRatPoison";
             }
-            if(button == 2){
+            else if(button == 2){
                 giveAdvil();
                 state = "giveAdvil";
             }
@@ -683,6 +825,48 @@
                 intro();
                 state = "intro";
             }
+        }
+        else if(state == "giveRatPoison"){
+            if(button == 1){
+                mannyDies();
+                state = "mannyDies";
+            }
+        }
+        else if(state == "giveAdvil"){
+            if(button == 1){
+                waitForAmbulance();
+                state = "waitForAmbulance";
+            }
+        }
+        else if(state == "waitForAmbulance"){
+            if(button == 1){
+                passDownPos();
+                state = "passDownPos";
+            }
+        }
+        else if(state == "passDownPos"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+        else if(state == "mannyDies"){
+            if(button == 1){
+                causeSus();
+                state = "causeSus";
+            }
+        }
+        else if(state == "causeSus"){
+            if(button == 1){
+                getProsecuted();
+                state = "getProsecuted";
+            }
+        }
+        else if(state == "getProsecuted"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            } 
         }
         return false;
     }
