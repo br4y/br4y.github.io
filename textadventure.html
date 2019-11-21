@@ -138,7 +138,7 @@
 
     function askForHelp(){
         
-        pic.src = "images/gethelp.png"; //asking for help
+        pic.src = "images/gethelp.png"; 
         
         ptext1.innerHTML = "You ask a cashier to help you mop the spill. You two clean up the spill quickly and without any troubles. You go back to your station and get fryin'.";
         ptext2.innerHTML = "";
@@ -306,7 +306,7 @@
     
     function cleanCorrectly(){
         
-        pic.src = "images/.png"; //spiffy fry machine
+        pic.src = "images/cleanmachine.png"; 
         
         ptext1.innerHTML = "You successfully wasted an entire hour cleaning the fry machine. You whip up a few batches and quickly become hungry. It wouldn't hurt to snack on a couple fries. Right?";
         ptext2.innerHTML = "";
@@ -327,7 +327,7 @@
 
     function frySplosion(){
         
-        pic.src = "images/.png"; //frysplosion
+        pic.src = "images/frysplosion.png"; 
         
         ptext1.innerHTML = "Not only did you forget to turn off the fry cooker before cleaning it, but water splashed into the cooking oil and the machine exploded!";
         ptext2.innerHTML = "It was only a matter of time";
@@ -348,7 +348,7 @@
 
     function helpOutMore(){
         
-        pic.src = "images/fry.png"; 
+        pic.src = "images/frycry.png"; 
         
         ptext1.innerHTML = "You decide that you want to help out more and ask if there's anything else you can do to help.";
         ptext2.innerHTML = "Your manager decides that you would make a great assistant, and you are 'promoted' against your will.";
@@ -409,9 +409,9 @@
         
     }
     
-    function helpOutMore(){
+    function frySnack(){
         
-        pic.src = "images/.png"; //fry having a snack
+        pic.src = "images/frysnack.png"; //fry having a snack
         
         ptext1.innerHTML = "You eat a few fresh fries and nobody notices. Would you like a few more?";
         ptext2.innerHTML = "";
@@ -419,7 +419,91 @@
         ptext4.innerHTML = "";
         
         b1.innerHTML = "Back to work";
-        b2.innerHTML = "Have a snack";
+        b2.innerHTML = "Have some more";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function restockFries(){
+        
+        pic.src = "images/.png"; //fry trapped in the freezer
+        
+        ptext1.innerHTML = "You step into the freezer and are suprised by how cold it is. The door slams behind you and you hear something metal hit the floor. You turn around and notice it was the freezer's handle.";
+        ptext2.innerHTML = "You are the only person who goes anywhere near the freezer and you accept that you are trapped there forever. Do you want to eat some frozen fries to pass the time?";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Might as well";
+        b2.innerHTML = "I'll pass";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function dontRestock(){
+        
+        pic.src = "images/.png"; //natl fry day
+        
+        ptext1.innerHTML = "You were too lazy to restock the fries and in return there was an extremely long wait for fries on National Fry Day. Your manager -- and all of the waiting customers -- are furious.";
+        ptext2.innerHTML = "You were fired for slacking off.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Restart";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function fryStarve(){
+        
+        pic.src = "images/.png"; //fry dead in the freezer
+        
+        ptext1.innerHTML = "With nothing to eat besides frozen fries, you decide it's just better if you starved to death.";
+        ptext2.innerHTML = "It was a good run";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Restart";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        
+    }
+
+    function fryPoison(){
+        
+        pic.src = "images/.png"; //fry dead in the freezer ppoison
+        
+        ptext1.innerHTML = "Maybe you should cook the fries before you eat them so the chemicals can get cooked out.";
+        ptext2.innerHTML = "You ate a handful of preservative-packed frozen fries and died.";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        
+        b1.innerHTML = "Restart";
+        b2.innerHTML = "";
         b3.innerHTML = "";
         b4.innerHTML = "";
         
@@ -522,22 +606,26 @@
             }
         }
         else if(state == "backToWork"){
-            if(button = 1){
+            if(button == 1){
                 frySplosion();
                 state = "frySplosion";
+            }
+            if(button == 2){
+                cleanCorrectly();
+                state = "cleanCorrectly";
             }
         }
         else if(state == "cleanCorrectly"){
             if(button == 1){
-                haveSnack();
-                state = "haveSnack"
+                frySnack();
+                state = "frySnack"
             }
             if(button == 2){
                 stillRespectable();
                 state = "stillRespectable";
             }
         }
-        else if(state == "haveSnack"){
+        else if(state == "frySnack"){
             if(button == 1){
                 stillRespectable();
                 state = "stillRespectable";
@@ -556,7 +644,7 @@
         else if(state == "stillRespectable"){
             if(button == 1){
                 restockFries();
-                state = "restockFries"
+                state = "restockFries";
             }
             if(button == 2){
                 dontRestock();
@@ -564,6 +652,33 @@
             }
         }
         else if(state == "frySplosion"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+        else if(state == "restockFries"){
+            if(button == 1){
+                fryPoison();
+                state = "fryPoison"
+            }
+            if(button == 2)
+                fryStarve();
+                state = "fryStarve";
+        }
+        else if(state == "fryStarve"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+        else if(state == "fryPoison"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+        else if(state == "dontRestock"){
             if(button == 1){
                 intro();
                 state = "intro";
