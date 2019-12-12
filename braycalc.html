@@ -23,33 +23,35 @@
      </div>
  </div>
 
-<form action="/action_page.php">
+<form oninput="ans.value=parseInt(v1.value)*(parseInt(m1.value)-parseInt(m2.value))/(parseInt(m1.value)+parseInt(m2.value))+parseInt(v2.value)*(2*parseInt(m2.value))/(parseInt(m1.value)+parseInt(m2.value))">
     Mass of Object 1 (M1)<br>
-    <input type="text" name="m1" value="">
+    <input type="number" name="m1" value="">
     <br>
     Velocity of Object 1 (V1)<br>
-    <input type="text" name="v1" value="">
+    <input type="number" name="v1" value="">
     <br>
     Mass of Object 2 (M2)
     <br>
-    <input type="text" name="m2" value="">
+    <input type="number" name="m2" value="">
     <br>
     Velocity of Object 2 (V2)<br>
-    <input type="text" name="v2" value="">
+    <input type="number" name="v2" value="">
     <br><br>
-    <input type="submit" value="Submit">
     <input type="reset">
+    <output name="ans" for = "m1 v1 m2 v2"></output>
 </form> 
 
 <script>
 
-var v1 = 1.1;
-var m1 = 418;
-var v2 = 2.17;
-var m2 = 38;
+// var v1 = 1.1;
+// var m1 = 418;
+// var v2 = 2.17;
+// var m2 = 38;
 
 // elastic V1f
 // var v1f = v1*((m1-m2)/(m1+m2))+v2*((2*m2)/(m1+m2));
+
+// oninput="ans.value=parseInt(v1.value)*(parseInt(m1.value)-parseInt(m2.value))/(parseInt(m1.value)+parseInt(m2.value))+parseInt(v2.value)*(2*parseInt(m2.value))/(parseInt(m1.value)+parseInt(m2.value))
 
 // elastic V2f
 // var v2f = v2*((m2-m1)/(m1+m2))+v1*((2*m1)/(m1+m2));
@@ -58,7 +60,7 @@ var m2 = 38;
 // var vF = ((m1*v1+m2*v2)/(m1+m2));
 
 // explosion vLOG
-var vLOG = ((m1+m2)*(v1)-(m2*v2))/(m1)
+// var vLOG = ((m1+m2)*(v1)-(m2*v2))/(m1)
 
 // elastic v1f + v2f
 // alert("v1f = " + v1f + " v2f = " + v2f);
@@ -67,7 +69,7 @@ var vLOG = ((m1+m2)*(v1)-(m2*v2))/(m1)
 // alert("vF = " + vF);
 
 // explosion vLOG
-alert ("vLOG = " + vLOG);
+// alert ("vLOG = " + vLOG);
 
 </script>
 
