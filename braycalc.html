@@ -7,7 +7,7 @@
 <body>
 
 <div class="navbar">
-    <a>brayCalc</a>
+    <a>calcuBraytor</a>
         <div class="links">
           <a href="index.html">Home</a>
           <a href="about.html">About Me</a>
@@ -43,16 +43,31 @@
 
 <script>
 
-var m1 = 2;
-var v1 = 8;
-var m2 = 4;
-var v2 = -2;
+var v1 = 1.1;
+var m1 = 418;
+var v2 = 2.17;
+var m2 = 38;
 
-var v1f = v1*((m1-m2)/(m1+m2))+v2*((2*m2)/(m1+m2));
+// elastic V1f
+// var v1f = v1*((m1-m2)/(m1+m2))+v2*((2*m2)/(m1+m2));
 
-var v2f = v2*((m2-m1)/(m1+m2))+v1*((2*m1)/(m1+m2));
+// elastic V2f
+// var v2f = v2*((m2-m1)/(m1+m2))+v1*((2*m1)/(m1+m2));
 
-alert("v1f = " + v1f + " v2f = " + v2f);
+// inelastic vF
+// var vF = ((m1*v1+m2*v2)/(m1+m2));
+
+// explosion vLOG
+var vLOG = ((m1+m2)*(v1)-(m2*v2))/(m1)
+
+// elastic v1f + v2f
+// alert("v1f = " + v1f + " v2f = " + v2f);
+
+// inelastic vF
+// alert("vF = " + vF);
+
+// explosion vLOG
+alert ("vLOG = " + vLOG);
 
 </script>
 
