@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="StyleSheet.css" rel="stylesheet" type="text/css">
+    </head>
+
+<body>
+
+<div class="navbar">
+    <a href="braycalc.html">calcuBraytor Chapter 12</a>
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="resume.html">Resume</a>
+            <div class="dropdown">
+            <div class="morelinks">Projects</div>
+            <div class="dropdown-content">
+                <a href="textadventure.html">Text Adventure</a>
+                <a class="active" href="braycalc.html">brayCalc</a>
+                <a href="#">Projects</a>
+            </div>
+        </div>
+     </div>
+ </div>
+
+<table class="calctable">
+    <td>
+    <form oninput=vF.value=((parseInt(m1.value)*parseInt(v1.value))+(parseInt(m2.value)*parseInt(v2.value)))/(parseInt(m1.value)+parseInt(m2.value))>
+        Inelastic Collision Calculator<br><br>
+        Mass of Object 1 (M1)<br>
+        <input type="number" name="m1" value="">
+        <br>
+        Velocity of Object 1 (V1)<br>
+        <input type="number" name="v1" value="">
+        <br>
+        Mass of Object 2 (M2)
+        <br>
+        <input type="number" name="m2" value="">
+        <br>
+        Velocity of Object 2 (V2)<br>
+        <input type="number" name="v2" value="">
+        <br><br>
+        <input type="reset">
+        <output name="vF" for = "m1 v1 m2 v2"></output>
+    </form> 
+    </td>
+    <td class="spacecolumn"></td>
+    <td>
+    <form oninput=vLOG.value=((parseInt(m1.value)+parseInt(m2.value))*(parseInt(v1.value))-(parseInt(m2.value)*parseInt(v2.value)))/(parseInt(m1.value))>
+        Explosive Collision Calculator<br><br>
+        Mass of Object 1 (M1)<br>
+        <input type="number" name="m1" value="">
+        <br>
+        Velocity of Object 1 (V1)<br>
+        <input type="number" name="v1" value="">
+        <br>
+        Mass of Object 2 (M2)
+        <br>
+        <input type="number" name="m2" value="">
+        <br>
+        Velocity of Object 2 (V2)<br>
+        <input type="number" name="v2" value="">
+        <br><br>
+        <input type="reset">
+        <output name="vLOG" for = "m1 v1 m2 v2"></output>
+    </form> 
+    </td>
+    <td class="spacecolumn"></td>
+    <td>
+    <form oninput=v1f.value=parseInt(v1.value)*((parseInt(m1.value)-parseInt(m2.value))/(parseInt(m1.value)+parseInt(m2.value)))+parseInt(v2.value)*((2*parseInt(m2.value))/(parseInt(m1.value)+parseInt(m2.value)));v2f.value=parseInt(v2.value)*((parseInt(m2.value)-parseInt(m1.value))/(parseInt(m1.value)+parseInt(m2.value)))+parseInt(v1.value)*((2*parseInt(m1.value))/(parseInt(m1.value)+parseInt(m2.value)))
+    >
+        Elastic Collision Calculator<br><br>
+        Mass of Object 1 (M1)<br>
+        <input type="number" name="m1" value="">
+        <br>
+        Velocity of Object 1 (V1)<br>
+        <input type="number" name="v1" value="">
+        <br>
+        Mass of Object 2 (M2)
+        <br>
+        <input type="number" name="m2" value="">
+        <br>
+        Velocity of Object 2 (V2)<br>
+        <input type="number" name="v2" value="-">
+        <br><br>
+        <input type="reset">
+        <output name="v1f" for = "m1 v1 m2 v2"></output>
+        <output name="v2f" for = "m1 v1 m2 v2"></output>
+    </form> 
+    </td>
+</table>
+
+</body>
+</html>
