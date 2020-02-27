@@ -294,6 +294,14 @@
         justify-content: center;
     }
 
+    #cointainer-pygame{
+        position: absolute;
+        top:80px;
+        height:100%;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+    }
 /*
 git add .
 git commit -m "Message"
