@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="StyleSheet.css" rel="stylesheet" type="text/css">
+    </head>
+
+<body>
+
+<div class="navbar">
+    <a href="braycalc.html">calcuBraytor Chapter 12</a>
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="resume.html">Resume</a>
+            <div class="dropdown">
+            <div class="morelinks">Projects</div>
+            <div class="dropdown-content">
+                <a href="textadventure.html">Text Adventure</a>
+                <a class="active" href="braycalc.html">brayCalc</a>
+                <a href="#">Projects</a>
+            </div>
+        </div>
+     </div>
+ </div>
+
+<table class="calctable">
+    <td>
+    <form oninput=mag.value=(parseInt(A.value)*(Math.cos(parseInt(tA.value))))>
+        Vector Addition Calculator<br><br>
+        A<br>
+        <input type="number" name="A" value="11.9">
+        <br>
+        ѲA<br>
+        <input type="number" name="tA" value="39.6">
+        <br>
+        B<br>
+        <input type="number" name="B" value="10.2">
+        <br>
+        ѲB<br>
+        <input type="number" name="tB" value="60">
+        <br><br>
+        <input type="reset">
+
+        <output name="mag" for = "A tA B tB"></output>
+    </form> 
+    </td>
+</table>
+</body>
+</html>

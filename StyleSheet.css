@@ -240,6 +240,60 @@
         width:50%;
     }
 
+
+#container-py{
+        position: absolute;
+        background-color:red;
+        top:80px;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+    }
+
+    #leftpane-py{
+        background-color:green;  
+        width:60%;
+        height:100%;
+        float:left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #rightpane-py{
+        width:40%;
+        background-color:yellowgreen;
+        height:100%;
+        float:right;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #storytext-py{
+        background-color:pink; 
+        position:absolute;
+        max-height:100%;
+        bottom: 50px;
+        top: 0px;
+        left: 60%;
+        right: 0px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #choices-py{
+        position:absolute;
+        background-color:teal;
+        bottom: 0px;
+        height: 50px;
+        left: 60%;
+        right: 0px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 /*
 git add .
 git commit -m "Message"
