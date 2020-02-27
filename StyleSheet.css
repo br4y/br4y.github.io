@@ -295,12 +295,7 @@
     }
 
     #cointainer-pygame{
-        position: absolute;
-        top:80px;
-        height:100%;
-        bottom: 5px;
-        left: 5px;
-        right: 5px;
+        margin:10px;
     }
 /*
 git add .
