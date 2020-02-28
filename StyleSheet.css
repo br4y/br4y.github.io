@@ -249,7 +249,7 @@ right: 5px;
 
 #leftpane-py{
 background-color:green;  
-width:60%;
+width:70%;
 height:100%;
 float:left;
 display: flex;
@@ -258,7 +258,7 @@ justify-content: center;
 }
 
 #rightpane-py{
-width:40%;
+width:30%;
 background-color:yellowgreen;
 height:100%;
 float:right;
