@@ -240,7 +240,6 @@ width:50%;
 
 #container-py{
 position: absolute;
-background-color:red;
 top:80px;
 bottom: 5px;
 left: 5px;
@@ -248,7 +247,6 @@ right: 5px;
 }
 
 #leftpane-py{
-background-color:green;  
 width:70%;
 height:100%;
 float:left;
@@ -259,7 +257,6 @@ justify-content: center;
 
 #rightpane-py{
 width:30%;
-background-color:yellowgreen;
 height:100%;
 float:right;
 display: flex;
@@ -268,7 +265,6 @@ justify-content: center;
 }
 
 #storytext-py{
-background-color:pink; 
 position:absolute;
 max-height:100%;
 bottom: 50px;
@@ -283,7 +279,6 @@ font-family:"Arial Black", Gadget, sans-serif;
 
 #choices-py{
 position:absolute;
-background-color:teal;
 bottom: 0px;
 height: 50px;
 left: 60%;
