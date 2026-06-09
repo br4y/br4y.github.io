@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>br4y — projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F8F8F6;
+      --ink: #141414;
+      --muted: #8A96A0;
+      --border: rgba(20,20,20,0.1);
+      --border-hover: rgba(20,20,20,0.22);
+      --surface: #F0F0ED;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .wordmark {
+      font-family: 'DM Mono', monospace;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .wordmark:hover { opacity: 0.6; }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      padding-bottom: 4px;
+    }
+
+    nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    nav a:hover { color: var(--ink); border-color: var(--ink); }
+    nav a.active { color: var(--ink); border-color: var(--ink); }
+
+    /* ── Rule ── */
+    .rule {
+      max-width: 1080px;
+      margin: 2.5rem auto 0;
+      padding: 0 2rem;
+    }
+    .rule hr { border: none; border-top: 1px solid var(--border); }
+
+    /* ── Page title ── */
+    .page-title {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 2rem;
+    }
+
+    .page-title h1 {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .page-title p {
+      margin-top: 0.75rem;
+      font-size: 14px;
+      font-family: 'DM Mono', monospace;
+      color: var(--muted);
+    }
+
+    /* ── Projects list ── */
+    .projects {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .project-row {
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 0;
+      position: relative;
+    }
+
+    .project-row:last-of-type { border-bottom: 1px solid var(--border); }
+
+    .project-meta {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .project-name {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .project-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+    }
+
+    .project-desc {
+      margin-top: 0.4rem;
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.65;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 0.9rem;
+    }
+
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 2px 8px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Dropdown trigger ── */
+    .project-actions {
+      margin-top: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--ink);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 5px 12px;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: border-color 0.15s, background 0.15s;
+      user-select: none;
+    }
+
+    .dropdown-btn:hover { border-color: var(--border-hover); background: #E8E8E5; }
+
+    .dropdown-btn .arrow {
+      font-size: 10px;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+
+    .dropdown-btn.open .arrow { transform: rotate(180deg); }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      min-width: 200px;
+      z-index: 100;
+      overflow: hidden;
+    }
+
+    .dropdown-menu.visible { display: block; }
+
+    .dropdown-menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.1s;
+    }
+
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: var(--surface); }
+
+    .dropdown-menu a .link-icon {
+      font-size: 14px;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    /* ── Placeholder project ── */
+    .project-placeholder .project-name { color: var(--muted); }
+    .project-placeholder .placeholder-note {
+      display: inline-block;
+      margin-top: 0.9rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      border: 1px dashed var(--border-hover);
+      border-radius: 3px;
+      padding: 3px 10px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Archive ── */
+    .archive-section {
+      max-width: 1080px;
+      margin: 3rem auto 0;
+      padding: 0 2rem 4rem;
+    }
+
+    .archive-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .archive-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .archive-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1.25rem;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .archive-item:first-child { border-top: 1px solid var(--border); }
+
+    .archive-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .archive-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--border-hover);
+      flex-shrink: 0;
+    }
+
+    .archive-desc {
+      font-size: 13px;
+      color: var(--muted);
+      flex: 2;
+      opacity: 0.7;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer span {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    footer a {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: var(--ink); }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      header { flex-direction: column; align-items: flex-start; gap: 1.25rem; padding: 2.5rem 1.25rem 0; }
+      .rule, .projects, .page-title, .archive-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .archive-desc { display: none; }
+      footer { padding: 1.25rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .dropdown-btn .arrow { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="wordmark">br4y</a>
+    <nav>
+      <a href="projects.html" class="active">projects</a>
+      <a href="resume.pdf">resume</a>
+    </nav>
+  </header>
+
+  <div class="rule"><hr></div>
+
+  <div class="page-title">
+    <h1>projects</h1>
+    <p>// things i've built</p>
+  </div>
+
+  <section class="projects" aria-label="Projects">
+
+    <!-- Plain -->
+    <div class="project-row">
+      <div class="project-meta">
+        <span class="project-name">Plain.</span>
+        <span class="project-year">2026</span>
+      </div>
+      <p class="project-desc">A social platform for real people — no ads, no algorithm, no AI-generated content. Just the people that actually matter to you.</p>
+      <div class="project-tags">
+        <span class="tag">social</span>
+        <span class="tag">react</span>
+        <span class="tag">product</span>
+      </div>
+      <div class="project-actions">
+        <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(this)">
+          view project <span class="arrow">▾</span>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a href="#" role="menuitem">
+            <span class="link-icon">&#9654;</span> product demo
+          </a>
+          <a href="plain_pitch_deck.html" role="menuitem">
+            <span class="link-icon">&#9654;</span> pitch deck
+          </a>
+          <a href="plain_brand_foundation.html" role="menuitem">
+            <span class="link-icon">&#9654;</span> mission statement
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Placeholder 02 -->
+    <div class="project-row project-placeholder">
+      <div class="project-meta">
+        <span class="project-name">project_02</span>
+        <span class="project-year">——</span>
+      </div>
+      <p class="project-desc">Description coming soon.</p>
+      <span class="placeholder-note">// coming soon</span>
+    </div>
+
+    <!-- Placeholder 03 -->
+    <div class="project-row project-placeholder">
+      <div class="project-meta">
+        <span class="project-name">project_03</span>
+        <span class="project-year">——</span>
+      </div>
+      <p class="project-desc">Description coming soon.</p>
+      <span class="placeholder-note">// coming soon</span>
+    </div>
+
+  </section>
+
+  <div class="rule" style="margin-top: 0;"><hr></div>
+
+  <section class="archive-section" aria-label="Archive">
+    <p class="archive-label">archive</p>
+    <div class="archive-list">
+      <div class="archive-item">
+        <span class="archive-name">project_name</span>
+        <span class="archive-year">20xx</span>
+        <span class="archive-desc">short description</span>
+      </div>
+      <div class="archive-item">
+        <span class="archive-name">project_name</span>
+        <span class="archive-year">20xx</span>
+        <span class="archive-desc">short description</span>
+      </div>
+      <div class="archive-item">
+        <span class="archive-name">project_name</span>
+        <span class="archive-year">20xx</span>
+        <span class="archive-desc">short description</span>
+      </div>
+      <div class="archive-item">
+        <span class="archive-name">project_name</span>
+        <span class="archive-year">20xx</span>
+        <span class="archive-desc">short description</span>
+      </div>
+      <div class="archive-item">
+        <span class="archive-name">project_name</span>
+        <span class="archive-year">20xx</span>
+        <span class="archive-desc">short description</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>br4y</span>
+    <a href="index.html">← home</a>
+  </footer>
+
+  <script>
+    function toggleDropdown(btn) {
+      const menu = btn.nextElementSibling;
+      const isOpen = menu.classList.contains('visible');
+      closeAll();
+      if (!isOpen) {
+        menu.classList.add('visible');
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    function closeAll() {
+      document.querySelectorAll('.dropdown-menu.visible').forEach(m => {
+        m.classList.remove('visible');
+        m.previousElementSibling.classList.remove('open');
+        m.previousElementSibling.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.project-actions')) closeAll();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeAll();
+    });
+  </script>
+
+</body>
+</html>
