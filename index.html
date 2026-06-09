@@ -29,7 +29,6 @@
       min-height: 100vh;
     }
 
-    /* ── Header ── */
     header {
       max-width: 1080px;
       margin: 0 auto;
@@ -51,7 +50,6 @@
       color: var(--ink);
       display: inline-flex;
       align-items: baseline;
-      gap: 0;
     }
 
     .cursor {
@@ -93,24 +91,16 @@
       padding-bottom: 1px;
     }
 
-    nav a:hover {
-      color: var(--ink);
-      border-color: var(--ink);
-    }
+    nav a:hover { color: var(--ink); border-color: var(--ink); }
 
-    /* ── Divider ── */
     .rule {
       max-width: 1080px;
       margin: 2.5rem auto 0;
       padding: 0 2rem;
     }
 
-    .rule hr {
-      border: none;
-      border-top: 1px solid var(--border);
-    }
+    .rule hr { border: none; border-top: 1px solid var(--border); }
 
-    /* ── About ── */
     .about {
       max-width: 1080px;
       margin: 0 auto;
@@ -139,7 +129,6 @@
 
     .about-text p + p { margin-top: 1em; }
 
-    /* ── Photos ── */
     .photos-section {
       max-width: 1080px;
       margin: 0 auto;
@@ -161,21 +150,12 @@
       text-transform: uppercase;
     }
 
-    .photos-hint {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-    }
-
     .photo-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: auto;
       gap: 8px;
     }
 
-    /* Varied grid layout for visual interest */
     .photo-grid .cell:nth-child(1) { grid-column: span 5; grid-row: span 2; }
     .photo-grid .cell:nth-child(2) { grid-column: span 4; }
     .photo-grid .cell:nth-child(3) { grid-column: span 3; }
@@ -195,29 +175,13 @@
     }
 
     .cell img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
-      transition: opacity 0.2s;
+      transition: opacity 0.3s;
     }
 
-    /* Placeholder state when no image is provided */
-    .cell .placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .cell .placeholder span {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: rgba(20,20,20,0.3);
-      letter-spacing: 0.08em;
-    }
-
-    /* ── Footer ── */
     footer {
       border-top: 1px solid var(--border);
       padding: 1.5rem 2rem;
@@ -232,7 +196,6 @@
       font-family: 'DM Mono', monospace;
       font-size: 11px;
       color: var(--muted);
-      letter-spacing: 0.06em;
     }
 
     footer a {
@@ -240,13 +203,11 @@
       font-size: 11px;
       color: var(--muted);
       text-decoration: none;
-      letter-spacing: 0.06em;
       transition: color 0.15s;
     }
 
     footer a:hover { color: var(--ink); }
 
-    /* ── Responsive ── */
     @media (max-width: 700px) {
       header { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 2.5rem 1.25rem 0; }
       nav { padding-bottom: 0; }
@@ -295,40 +256,31 @@
     </div>
     <div class="photo-grid">
       <div class="cell">
-        <img src="" alt="Landscape photo 1" onerror="this.style.display='none'">
-        <div class="placeholder"><span>photo_01.jpg</span></div>
+        <img src="photos/photo_01_sunset_clouds.jpg" alt="Sunset above the clouds">
       </div>
       <div class="cell">
-        <img src="" alt="Landscape photo 2" onerror="this.style.display='none'">
-        <div class="placeholder"><span>photo_02.jpg</span></div>
+        <img src="photos/photo_02_PD.jpg" alt="Palm Desert valley at dusk">
       </div>
       <div class="cell">
-        <img src="" alt="Collage 1" onerror="this.style.display='none'">
-        <div class="placeholder"><span>collage_01.jpg</span></div>
+        <img src="photos/photo_03_summit_view.jpg" alt="Rocky summit looking toward the coast">
       </div>
       <div class="cell">
-        <img src="" alt="Landscape photo 3" onerror="this.style.display='none'">
-        <div class="placeholder"><span>photo_03.jpg</span></div>
+        <img src="photos/photo_04_boat_wake.jpg" alt="Boat wake on the lake">
       </div>
       <div class="cell">
-        <img src="" alt="Collage 2" onerror="this.style.display='none'">
-        <div class="placeholder"><span>collage_02.jpg</span></div>
+        <img src="photos/photo_05_golden_field.jpg" alt="Golden field at sunset">
       </div>
       <div class="cell">
-        <img src="" alt="Landscape photo 4" onerror="this.style.display='none'">
-        <div class="placeholder"><span>photo_04.jpg</span></div>
+        <img src="photos/photo_06_beach_dusk.jpg" alt="Beach at dusk with the moon rising">
       </div>
       <div class="cell">
-        <img src="" alt="Landscape photo 5" onerror="this.style.display='none'">
-        <div class="placeholder"><span>photo_05.jpg</span></div>
+        <img src="photos/photo_07_forest_creek.jpg" alt="Sunlight through a forest creek">
       </div>
       <div class="cell">
-        <img src="" alt="Collage 3" onerror="this.style.display='none'">
-        <div class="placeholder"><span>collage_03.jpg</span></div>
+        <img src="photos/photo_08_oak_canopy.jpg" alt="Looking up through oak canopy">
       </div>
       <div class="cell">
-        <img src="" alt="Landscape photo 6" onerror="this.style.display='none'">
-        <div class="placeholder"><span>photo_06.jpg</span></div>
+        <img src="photos/photo_09_cliff_water.jpg" alt="Cliff face rising from the water">
       </div>
     </div>
   </section>
