@@ -2,18 +2,167 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive">
-<title>Presentation offline</title>
+<title>California Physicians Supplements: Brand and Website Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 <style>
-  :root{color-scheme:light dark;--bg:#fff;--ink:#0C2340}
-  @media (prefers-color-scheme:dark){:root{--bg:#0E1240;--ink:#fff}}
-  html,body{height:100%;margin:0}
-  body{display:flex;align-items:center;justify-content:center;padding:24px 16px;box-sizing:border-box;background:var(--bg);color:var(--ink);font:400 18px/1.5 system-ui,-apple-system,sans-serif;text-align:center}
-  p{margin:0;max-width:32em}
+:root{--ink:#0C2340;--mute:#4C5F75;--line:#DCE4EA;--paper:#fff;--gut:clamp(16px,5vw,72px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Host Grotesk",system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid #0F7FB5;outline-offset:3px}
+.w{max-width:1320px;margin:0 auto;padding-inline:var(--gut)}
+.top{display:flex;justify-content:space-between;gap:16px;padding-block:24px;font-size:16px;font-weight:500}
+.top nav{display:flex;gap:24px}.top nav a{text-decoration:none}
+.cover{padding-block:clamp(56px,10vw,140px) clamp(56px,8vw,110px)}
+.cover .k{font-weight:600;color:var(--mute)}
+h1{font-size:clamp(46px,8.6vw,124px);font-weight:500;letter-spacing:-.05em;line-height:.98;margin-top:16px;max-width:1120px}
+h1 em{font-family:"Playfair Display",Georgia,serif;font-weight:500;letter-spacing:-.03em}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border-top:1px solid var(--ink);margin-top:clamp(40px,6vw,76px);padding-top:16px}
+.meta b{display:block;font-weight:600}.meta span{color:var(--mute)}
+h2{font-size:clamp(34px,5vw,64px);font-weight:500;letter-spacing:-.04em;line-height:1.04}
+.dir{background:var(--b);padding-block:clamp(52px,7vw,96px)}
+.dg{display:grid;grid-template-columns:.72fr 1.5fr;gap:clamp(28px,5vw,72px);align-items:center}
+.n{font-weight:600;font-size:16px}
+.dir h2{margin-top:8px}
+.dir p.d{margin-top:14px;font-size:20px;line-height:1.35}
+.sp{display:flex;gap:6px;margin-top:22px}
+.sp i{width:38px;height:38px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(12,35,64,.14)}
+.fonts{font-size:16px;margin-top:12px}
+.go{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border-radius:99px;background:var(--ink);color:#fff;font-weight:600;text-decoration:none;margin-top:20px}
+.dark{color:#fff}.dark .go{background:#fff;color:var(--ink)}.dark .sp i{box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.stage{position:relative;padding:0 7% 7% 0;display:block}
+.brow{border-radius:12px;overflow:hidden;box-shadow:0 22px 50px rgba(12,35,64,.2);background:#fff}
+.brow .ch{height:26px;background:#EEF1F4;display:flex;gap:6px;align-items:center;padding-left:12px}
+.brow .ch i{width:9px;height:9px;border-radius:50%;background:#C8D0D8}
+.ph{position:absolute;right:0;bottom:0;width:20%;border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(12,35,64,.3);border:5px solid #0C2340;background:#0C2340}
+.sec{padding-block:clamp(56px,8vw,112px)}
+.ext{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.ext a{text-decoration:none;display:block}
+.ext img{border-radius:10px;box-shadow:0 0 0 1px var(--line)}
+.ext b{display:block;font-weight:600;margin-top:10px}
+.ext span{font-size:16px;color:var(--mute)}
+.lead{max-width:760px;margin-top:12px;color:var(--mute);font-size:20px;line-height:1.35}
+.srcg{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);margin-top:32px}
+h3{font-size:22px;font-weight:600;letter-spacing:-.015em;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.sl{list-style:none;padding:0}
+.sl li{display:grid;grid-template-columns:1fr 1.2fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);font-size:17px}
+.sl li span{color:var(--mute)}
+.sl a{font-weight:500;text-underline-offset:3px}
+.ph-list{margin-top:32px;background:#F1F7FA;border-radius:14px;padding:clamp(20px,3vw,32px)}
+.ph-list ul{padding-left:20px;margin-top:10px;columns:2;column-gap:40px}.ph-list li{margin-bottom:6px;break-inside:avoid}
+.ph-list h3{border:0;padding:0}
+footer{border-top:1px solid var(--line);padding-block:26px;font-size:15px;color:var(--mute)}
+@media(max-width:980px){.dg{grid-template-columns:1fr}.ext{grid-template-columns:1fr 1fr}.srcg{grid-template-columns:1fr}}
+@media(max-width:620px){.meta{grid-template-columns:1fr}.top nav{display:none}.ph-list ul{columns:1}.sl li{grid-template-columns:1fr;gap:1px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<p>This presentation is offline. Contact the owner to make it live again.</p>
+<header class="w top"><span>California Physicians Supplements</span><nav aria-label="Presentation"><a href="#directions">Directions</a><a href="#prototype">Prototype</a><a href="#sources">Sources</a></nav></header>
+<main>
+<section class="w cover">
+ <p class="k">Brand and website redesign</p>
+ <h1>Four directions for a <em>modern</em> California Physicians Supplements.</h1>
+ <div class="meta">
+  <div><b>Prepared for</b><span>California Physicians Supplements</span></div>
+  <div><b>Prepared by</b><span>Bradyn Hargate</span></div>
+  <div><b>Presented</b><span>November 2026</span></div>
+ </div>
+</section>
+
+<div id="directions">
+<section class="dir" style="--b:#E8F5FB"><div class="w dg">
+ <div><p class="n">Direction A</p><h2>Daylight</h2><p class="d">A warm system built from the California sky, organized by time of day.</p>
+  <div class="sp" aria-hidden="true"><i style="background:#FFC685"></i><i style="background:#7FD0F2"></i><i style="background:#FF8F78"></i><i style="background:#1E2169"></i></div>
+  <p class="fonts">Host Grotesk</p><a class="go" href="direction-a-daylight.html">View homepage</a></div>
+ <a class="stage" href="direction-a-daylight.html" aria-label="Open Direction A"><div class="brow"><div class="ch"><i></i><i></i><i></i></div><img src="previews/a-fold.jpg" alt="Direction A desktop homepage"></div><div class="ph"><img src="previews/a-phone.jpg" alt="Direction A phone homepage"></div></a>
+</div></section>
+
+<section class="dir dark" style="--b:#08182A"><div class="w dg">
+ <div><p class="n">Direction B</p><h2>Formulary</h2><p class="d">A precise, label-first system that brings the full range onto one page.</p>
+  <div class="sp" aria-hidden="true"><i style="background:#08182A"></i><i style="background:#19B5F1"></i><i style="background:#F2F5F7"></i><i style="background:#fff"></i></div>
+  <p class="fonts">Geist, Geist Mono</p><a class="go" href="direction-b-formulary.html">View homepage</a></div>
+ <a class="stage" href="direction-b-formulary.html" aria-label="Open Direction B"><div class="brow"><div class="ch"><i></i><i></i><i></i></div><img src="previews/b-fold.jpg" alt="Direction B desktop homepage"></div><div class="ph"><img src="previews/b-phone.jpg" alt="Direction B phone homepage"></div></a>
+</div></section>
+
+<section class="dir" style="--b:#E6F3F9"><div class="w dg">
+ <div><p class="n">Direction C</p><h2>Whole Body</h2><p class="d">Editorial and minimal, in sky blue with orange accents and a focus on subscriptions.</p>
+  <div class="sp" aria-hidden="true"><i style="background:#0B6E99"></i><i style="background:#C9E6F3"></i><i style="background:#FDEBDD"></i><i style="background:#F4883A"></i></div>
+  <p class="fonts">Plus Jakarta Sans, Playfair Display</p><a class="go" href="direction-c-wholebody.html">View homepage</a></div>
+ <a class="stage" href="direction-c-wholebody.html" aria-label="Open Direction C"><div class="brow"><div class="ch"><i></i><i></i><i></i></div><img src="previews/c-fold.jpg" alt="Direction C desktop homepage"></div><div class="ph"><img src="previews/c-phone.jpg" alt="Direction C phone homepage"></div></a>
+</div></section>
+
+<section class="dir" style="--b:#FDE8D9"><div class="w dg">
+ <div><p class="n">Direction D</p><h2>Golden State</h2><p class="d">A warmer, magazine-style layout in soft oranges with an elegant serif voice.</p>
+  <div class="sp" aria-hidden="true"><i style="background:#EC7A2E"></i><i style="background:#F8C49B"></i><i style="background:#DDEFF7"></i><i style="background:#0C4A66"></i></div>
+  <p class="fonts">Playfair Display, DM Sans</p><a class="go" href="direction-d-goldenstate.html">View homepage</a></div>
+ <a class="stage" href="direction-d-goldenstate.html" aria-label="Open Direction D"><div class="brow"><div class="ch"><i></i><i></i><i></i></div><img src="previews/d-fold.jpg" alt="Direction D desktop homepage"></div><div class="ph"><img src="previews/d-phone.jpg" alt="Direction D phone homepage"></div></a>
+</div></section>
+</div>
+
+<section class="w sec" id="prototype">
+ <h2>Extended prototype</h2>
+ <p class="lead">Direction A shown beyond the homepage, to demonstrate how a direction scales.</p>
+ <div class="ext">
+  <a href="daylight-joint-care.html"><img src="previews/pg-product.jpg" alt="Product page" loading="lazy"><b>Product page</b><span>Joint Care layout</span></a>
+  <a href="daylight-routine.html"><img src="previews/pg-routine.jpg" alt="Routine builder" loading="lazy"><b>Routine builder</b><span>Guided product finder</span></a>
+  <a href="daylight-ingredients.html"><img src="previews/pg-inside.jpg" alt="Ingredient search" loading="lazy"><b>Ingredient search</b><span>Searchable label content</span></a>
+  <a href="daylight-brand.html"><img src="previews/pg-brand.jpg" alt="Brand system" loading="lazy"><b>Brand system</b><span>Logo, color, type and packaging</span></a>
+ </div>
+</section>
+
+<section class="w sec" id="sources" style="border-top:1px solid var(--line)">
+ <h2>Sources</h2>
+ <p class="lead">All references were viewed November 6, 2026.</p>
+ <div class="srcg">
+  <div><h3>Client content</h3><ul class="sl">
+   <li><a href="https://www.casupplements.com/">casupplements.com</a><span>Logo, palette, product names and prices</span></li>
+   <li><a href="https://www.casupplements.com/pages/about_us">About page</a><span>Founding year and brand background</span></li>
+   <li><a href="https://www.casupplements.com/products/joint-care">Joint Care listing</a><span>Rating, reviews, subscription offer and label</span></li>
+   <li><a href="https://www.casupplements.com/policies/refund-policy">Refund policy</a><span>30-day return terms</span></li>
+   <li><a href="https://www.casupplements.com/policies/shipping-policy">Shipping policy</a><span>Processing and delivery details</span></li>
+   <li><a href="https://www.casupplements.com/collections/all">Product catalog</a><span>Range structure and label images</span></li>
+  </ul>
+  <h3 style="margin-top:28px">Typefaces</h3><ul class="sl">
+   <li><a href="https://fonts.google.com/specimen/Host+Grotesk">Host Grotesk</a><span>Google Fonts</span></li>
+   <li><div><a href="https://fonts.google.com/specimen/Geist">Geist</a> and <a href="https://fonts.google.com/specimen/Geist+Mono">Geist Mono</a></div><span>Google Fonts</span></li>
+   <li><a href="https://fonts.google.com/specimen/Plus+Jakarta+Sans">Plus Jakarta Sans</a><span>Google Fonts</span></li>
+   <li><a href="https://fonts.google.com/specimen/Playfair+Display">Playfair Display</a><span>Google Fonts</span></li>
+   <li><a href="https://fonts.google.com/specimen/DM+Sans">DM Sans</a><span>Google Fonts</span></li>
+  </ul></div>
+  <div><h3>Visual references</h3><ul class="sl">
+   <li><a href="https://huel.com/">Huel</a><span>Goal-led navigation</span></li>
+   <li><a href="https://drinkag1.com/">AG1</a><span>Product comparison and FAQ structure</span></li>
+   <li><a href="https://ritual.com/">Ritual</a><span>People-first photography</span></li>
+   <li><a href="https://www.thorne.com/">Thorne</a><span>Professional, restrained layouts</span></li>
+   <li><a href="https://www.livemomentous.com/">Momentous</a><span>Data presented as graphic elements</span></li>
+   <li><a href="https://seed.com/">Seed</a><span>Single-product hero composition</span></li>
+  </ul>
+  <h3 style="margin-top:28px">Artwork</h3><ul class="sl">
+   <li>Packaging and icons<span>Illustrated for this presentation</span></li>
+   <li>Palm logo treatments<span>Concept redraws of the client’s existing mark</span></li>
+   <li>Lifestyle photography<span>None used</span></li>
+  </ul></div>
+ </div>
+ <div class="ph-list"><h3>Remaining placeholder content</h3>
+  <p style="margin-top:6px;color:var(--mute)">Everything else in the designs comes from casupplements.com or was written for this presentation.</p>
+  <ul>
+   <li>Headlines and feature copy are concept text.</li>
+   <li>Total Body, Eye Health and Detox Plus label details</li>
+   <li>Sleep &amp; Stress Bundle contents</li>
+   <li>Physician names, credentials and portraits</li>
+   <li>Routine builder product matching</li>
+   <li>Lifestyle photography</li>
+  </ul>
+ </div>
+</section>
+</main>
+<footer><div class="w">Design concepts for client review. Product and brand names belong to their respective owners. Referenced brands are not affiliated with this project.</div></footer>
 </body>
 </html>

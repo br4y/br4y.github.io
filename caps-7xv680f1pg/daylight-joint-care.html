@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Joint Care: Daylight (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="daylight.css">
+<style>
+.crumb{padding-block:18px;font-size:16px;color:var(--ink-2)}
+.crumb a{text-decoration:underline;text-underline-offset:3px}
+.top{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(24px,4vw,64px);align-items:start;padding-bottom:clamp(56px,7vw,96px)}
+.gal{position:sticky;top:20px}
+.view{height:clamp(420px,52vw,720px);border-radius:var(--r);background:linear-gradient(180deg,#A9DDF4 0%,#FBE9CF 62%,#FFC796 100%);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;position:relative}
+.view::before{content:"";position:absolute;left:50%;bottom:-18%;width:92%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 40%,#FFF6D2 0%,#FFD98B 52%,#FFB46B 100%)}
+.view>div{display:none;width:100%;height:100%;position:relative}
+.view>div.on{display:flex}
+.v1{align-items:flex-end;justify-content:center}.v1 .p{height:88%;transform:translateY(4%)}
+.v2{flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:24px;text-align:center}
+.v2 svg{width:min(76%,430px);height:auto}
+.v2 p{font-size:clamp(28px,3vw,40px);font-weight:500;letter-spacing:-.03em;line-height:1.1}
+.v3{align-items:center;justify-content:center;padding:24px;background:var(--tint-b)}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.thumbs button{min-height:64px;border-radius:16px;background:var(--mist);font-weight:500;font-size:17px;padding:6px}
+.thumbs button[aria-pressed=true]{background:var(--ink);color:#fff}
+.moment{display:inline-flex;align-items:center;gap:9px;min-height:40px;padding:0 16px;border-radius:99px;background:var(--tint-b);font-weight:600;font-size:16px}
+.moment i{width:14px;height:14px;border-radius:50%;background:var(--pacific)}
+h1{font-size:clamp(58px,7.4vw,112px);letter-spacing:-.05em;margin-top:18px;line-height:.95}
+.sub{font-size:clamp(20px,1.8vw,24px);line-height:1.3;margin-top:16px}
+.rate{margin-top:14px;font-size:17px}
+.rate a{text-decoration:underline;text-underline-offset:3px}
+fieldset{border:0;padding:0;margin-top:24px}
+legend{font-weight:600;margin-bottom:8px}
+.op{display:grid;grid-template-columns:auto 1fr auto;gap:13px;align-items:center;padding:16px 18px;border-radius:18px;border:2px solid var(--line);margin-top:9px;cursor:pointer}
+.op:has(input:checked){border-color:var(--ink);background:var(--mist)}
+.op input{width:24px;height:24px;accent-color:var(--ink);margin:0}
+.op b{font-weight:600;display:block}
+.op small{display:block;font-size:16px;color:var(--ink-2)}
+.op strong{font-weight:600}
+#buy{width:100%;margin-top:14px;min-height:62px;font-size:20px}
+.assure{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;font-size:16px;text-align:center;color:var(--ink-2)}
+
+.dose{background:var(--noon)}
+.dg{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(28px,5vw,80px);align-items:end}
+.dose h2 em{font-style:normal}
+.dose .l{margin-top:18px;max-width:420px;font-size:20px;line-height:1.35}
+.num{border-top:2px solid var(--ink)}
+.num div{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(12,35,64,.28)}
+.num b{font-size:clamp(50px,6.6vw,98px);font-weight:500;letter-spacing:-.05em;line-height:1}
+.num small{font-size:.38em;letter-spacing:-.02em}
+.num span{font-size:20px;line-height:1.25}
+
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.how div{background:var(--mist);border-radius:var(--r);padding:28px}
+.how b{display:block;font-size:clamp(30px,3vw,40px);font-weight:500;letter-spacing:-.03em;line-height:1.05}
+.how p{margin-top:12px;color:var(--ink-2)}
+
+.lab{display:grid;grid-template-columns:minmax(0,520px) 1fr;gap:clamp(28px,5vw,80px)}
+.facts{border:2px solid var(--ink);padding:14px 18px;background:#fff;border-radius:6px;width:100%}
+.facts h3{font-size:34px;font-weight:700;letter-spacing:-.02em}
+.facts .s{border-bottom:8px solid var(--ink);padding-bottom:6px;margin-top:4px;font-size:17px}
+.facts table{width:100%;border-collapse:collapse;font-size:18px}
+.facts th{text-align:right;font-weight:600;font-size:15px;padding:6px 0 6px 12px;border-bottom:3px solid var(--ink)}
+.facts th:first-child{text-align:left;padding-left:0}
+.facts td{padding:9px 0 9px 12px;border-bottom:1px solid var(--ink);text-align:right}
+.facts td:first-child{text-align:left;font-weight:600;padding-left:0}
+.facts p{font-size:15px;margin-top:8px}
+.free{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.free span{min-height:42px;display:inline-flex;align-items:center;padding:0 15px;border-radius:99px;background:var(--mist);font-size:17px;font-weight:500}
+
+.doc{background:var(--ink);color:#fff}
+.dc{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(28px,5vw,80px);align-items:center}
+.ph{aspect-ratio:5/3.6;border-radius:18px;background:repeating-linear-gradient(135deg,rgba(255,255,255,.07) 0 12px,transparent 12px 24px);display:grid;place-items:center;color:#B9CBDA;font-size:16px}
+.doc h2{font-size:clamp(36px,4.4vw,62px)}
+.doc p{margin-top:16px;color:#D5E2EC;max-width:620px;font-size:20px;line-height:1.4}
+.doc a.btn{background:#fff;color:var(--ink);margin-top:22px}
+
+.rv{display:grid;grid-template-columns:320px 1fr;gap:clamp(28px,5vw,72px)}
+.score{font-size:clamp(84px,9vw,132px);font-weight:500;letter-spacing:-.05em;line-height:.9}
+.hist{margin-top:16px}
+.hist div{display:grid;grid-template-columns:20px 1fr 26px;gap:9px;align-items:center;font-size:16px;margin-top:5px}
+.hist i{height:10px;border-radius:9px;background:var(--mist);overflow:hidden;display:block}
+.hist i s{display:block;height:100%;background:var(--pacific);text-decoration:none}
+.qs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.q{background:var(--mist);border-radius:var(--r);padding:26px;display:flex;flex-direction:column}
+.q blockquote{font-size:21px;line-height:1.32;flex:1}
+.q cite{font-style:normal;font-size:16px;color:var(--ink-2);margin-top:14px}
+
+.pairs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.bundle{margin-top:18px;display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap;background:var(--noon);border-radius:var(--r);padding:26px}
+.bundle b{font-size:clamp(26px,2.6vw,34px);font-weight:500;letter-spacing:-.03em;display:block;line-height:1.1}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-size:22px;font-weight:500;padding:18px 0;list-style-position:outside}
+details p{padding-bottom:18px;max-width:760px;color:var(--ink-2)}
+.fq details,.fq h2{max-width:920px}
+.stick{display:none}
+
+@media (max-width:1040px){
+ .top,.dg,.lab,.dc,.rv{grid-template-columns:1fr}.gal{position:static}
+ .qs,.how{grid-template-columns:1fr}.pairs{grid-template-columns:1fr 1fr 1fr}
+}
+@media (max-width:640px){
+ .view{height:430px}
+ .thumbs button{font-size:16px}
+ .num div{grid-template-columns:1fr;gap:2px}
+ .pairs{grid-template-columns:1fr 1fr}
+ .assure{font-size:15px}
+ .op{padding:14px}
+ .stick{display:flex;position:fixed;inset:auto 0 0;z-index:20;background:#fff;border-top:1px solid var(--line);padding:10px 16px;gap:12px;align-items:center;justify-content:space-between;transform:translateY(110%);transition:transform .2s}
+ .stick.on{transform:none}
+ .stick .btn{min-height:50px;padding:0 22px}
+ body{padding-bottom:76px}
+ .toast{bottom:88px;white-space:nowrap}
+}
+</style>
+</head>
+<body>
+<div class="bar">Free U.S. shipping on orders over $100</div>
+<header class="hdr" data-hdr></header>
+
+<main>
+<div class="wrap">
+  <nav class="crumb" aria-label="Breadcrumb"><a href="direction-a-daylight.html#day">Your day</a> / Stay active / Joint Care</nav>
+  <section class="top">
+    <div class="gal">
+      <div class="view" id="view">
+        <div class="v1 on" id="v-pack"></div>
+        <div class="v2" id="v-dose">
+          <svg viewBox="0 0 420 120" role="img" aria-label="Three capsules">
+            <g id="cp"><rect x="6" y="20" width="120" height="58" rx="29" fill="#fff"/><path d="M66 20h31a29 29 0 0 1 0 58H66Z" fill="#0C2340"/></g>
+            <use href="#cp" x="145"/><use href="#cp" x="290"/>
+          </svg>
+          <p>Three capsules, once a day.</p>
+        </div>
+        <div class="v3" id="v-facts"></div>
+      </div>
+      <div class="thumbs" id="th">
+        <button data-v="v-pack" aria-pressed="true">The bottle</button>
+        <button data-v="v-dose" aria-pressed="false">The dose</button>
+        <button data-v="v-facts" aria-pressed="false">The label</button>
+      </div>
+    </div>
+
+    <div>
+      <a class="moment" href="daylight-routine.html"><i></i>Midday · Joints and mobility</a>
+      <h1>Joint Care</h1>
+      <p class="sub">Glucosamine and chondroitin capsules.</p>
+      <p class="rate">4.9 / 5 · <a href="#reviews">39 reviews</a></p>
+
+      <fieldset id="opts">
+        <legend>How would you like it?</legend>
+        <label class="op"><input type="radio" name="o" value="53.98" checked><span><b>Subscribe</b><small>Free shipping + 10% off</small></span><strong>$53.98</strong></label>
+        <label class="op"><input type="radio" name="o" value="59.98"><span><b>One bottle</b><small>30-day supply</small></span><strong>$59.98</strong></label>
+        <label class="op"><input type="radio" name="o" value="299.90"><span><b>Buy 5, get 1 free</b><small>6-month supply, free shipping</small></span><strong>$299.90</strong></label>
+      </fieldset>
+      <button class="btn" id="buy">Add to cart · $53.98</button>
+      <div class="assure"><span>Since 2005</span><span>Made in the USA</span><span>30-day returns</span></div>
+    </div>
+  </section>
+</div>
+
+<section class="dose sec"><div class="wrap dg">
+  <div><p class="eyebrow">What’s inside</p><h2 style="margin-top:12px">In each<br>serving</h2><p class="l">From the current label, per three-capsule serving.</p></div>
+  <div class="num">
+    <div><b>1,500<small> mg</small></b><span>Glucosamine HCl</span></div>
+    <div><b>1,200<small> mg</small></b><span>Chondroitin sulfate</span></div>
+    <div><b>3</b><span>Capsules per serving</span></div>
+  </div>
+</div></section>
+
+<section class="sec wrap">
+  <h2>How to take it</h2>
+  <div class="how">
+    <div><b>3 capsules a day</b><p>All at once is fine, with or without food.</p></div>
+    <div><b>Take it daily</b><p>Keep it by your toothbrush as a reminder.</p></div>
+    <div><b>30 days per bottle</b><p>Subscribe for regular delivery.</p></div>
+  </div>
+</section>
+
+<section class="sec wrap" style="padding-top:0"><div class="lab">
+  <div id="factsHome">
+    <div class="facts" id="facts">
+      <h3>Supplement Facts</h3>
+      <p class="s">Serving size: 3 capsules. Servings per container: 30</p>
+      <table>
+        <thead><tr><th scope="col">Ingredient</th><th scope="col">Amount per serving</th><th scope="col">% Daily Value</th></tr></thead>
+        <tbody><tr><td>Chondroitin sulfate</td><td>1,200 mg</td><td>†</td></tr><tr><td>Glucosamine HCl</td><td>1,500 mg</td><td>†</td></tr></tbody>
+      </table>
+      <p>† Daily Value not established. Other ingredients: vegetarian capsules.</p>
+    </div>
+  </div>
+  <div>
+    <h2>Dietary information</h2>
+    <p style="margin-top:20px;color:var(--ink-2);max-width:620px">Does not contain wheat, gluten, corn, yeast, soy, dairy, peanuts, tree nuts, egg, artificial colors, sweeteners or preservatives, as stated on the current product listing.</p>
+    <p style="margin-top:12px;color:var(--ink-2);max-width:620px">Check with your healthcare practitioner if you are pregnant or nursing. Keep out of reach of children.</p>
+  </div>
+</div></section>
+
+<section class="doc sec"><div class="wrap dc">
+  <div class="ph">Portrait placeholder</div>
+  <div>
+    <p class="eyebrow" style="color:#8ED8F8;margin:0">Our physicians</p>
+    <h2 style="margin-top:12px">Physician name</h2>
+    <p>Placeholder. Title and credentials to be supplied and approved.</p>
+    <a class="btn" href="direction-a-daylight.html#doctors">Meet the physicians</a>
+  </div>
+</div></section>
+
+<section class="sec wrap" id="reviews"><div class="rv">
+  <div>
+    <div class="score">4.9</div>
+    <p class="rate" style="margin-top:8px">Based on 39 reviews</p>
+  </div>
+  <div>
+    <h2 style="margin-bottom:24px">Customer reviews</h2>
+    <div class="qs">
+      <div class="q"><blockquote>“I have been a faithful JOINT user for at least 15 years.”</blockquote><cite>Judy D., verified buyer</cite></div>
+      <div class="q"><blockquote>“Over the years, I’ve sampled other Glucosamine brands, but always return to this.”</blockquote><cite>Barbara R., verified buyer</cite></div>
+      <div class="q"><blockquote>“This is my fourth order and will be ordering again.”</blockquote><cite>Jackie N., 6-SL customer</cite></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec wrap" style="padding-top:0">
+  <h2>Pairs well with</h2>
+  <div class="pairs" id="pairs"></div>
+  <div class="bundle"><div><b>Joint &amp; Mobility Bundle</b><span>Joint Care, Joint Power and Miracle Balm. $191.17.</span></div><button class="btn" data-add>Add the bundle</button></div>
+</section>
+
+<section class="sec wrap fq" style="padding-top:0">
+  <h2 style="margin-bottom:26px">Common questions</h2>
+  <details><summary>How do I take it?</summary><p>Three capsules daily. You can take all three at once, with or without food.</p></details>
+  <details><summary>Should I check with a healthcare practitioner?</summary><p>Check with your healthcare practitioner if you are pregnant or nursing.</p></details>
+  <details><summary>What is your return policy?</summary><p>We have a 30-day return policy. Sale items and gift cards can’t be returned. Email info@casupplements.com to start a return.</p></details>
+  <details><summary>How does shipping work?</summary><p>Orders are processed within 1 to 2 business days. U.S. orders over $100 ship free, and we ship worldwide to most countries.</p></details>
+</section>
+</main>
+
+<div class="stick noprint" id="stick"><div><b id="sp">$53.98</b> <span class="st">joint care</span></div><button class="btn" id="sb">Add to cart</button></div>
+<footer class="foot"><div class="wrap" data-ft></div></footer>
+
+<script src="whats-inside.js"></script>
+<script src="daylight.js"></script>
+<script>
+chrome();
+document.getElementById('v-pack').innerHTML=mk('joint');
+const f=document.getElementById('facts').cloneNode(true);f.removeAttribute('id');f.style.maxWidth='520px';document.getElementById('v-facts').append(f);
+const th=document.getElementById('th'),view=document.getElementById('view');
+th.onclick=e=>{const b=e.target.closest('button');if(!b)return;[...th.children].forEach(c=>c.setAttribute('aria-pressed',c==b));[...view.children].forEach(v=>v.classList.toggle('on',v.id==b.dataset.v))};
+const buy=document.getElementById('buy'),sp=document.getElementById('sp');
+document.getElementById('opts').onchange=e=>{const m='$'+e.target.value;buy.textContent='Add to cart · '+m;sp.textContent=m};
+buy.onclick=()=>addToCart();document.getElementById('sb').onclick=()=>addToCart();
+document.getElementById('pairs').innerHTML=['jpower','omega','bone'].map(card).join('');
+const st=document.getElementById('stick'),sticky=()=>st.classList.toggle('on',buy.getBoundingClientRect().bottom<0);addEventListener('scroll',sticky,{passive:true});sticky();
+</script>
+</body>
+</html>

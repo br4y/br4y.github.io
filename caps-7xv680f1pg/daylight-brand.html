@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Daylight Brand System (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="daylight.css">
+<style>
+.intro{background:linear-gradient(180deg,#8ED3F5,#FBE9CF 72%,#FFD3A8);padding-block:clamp(56px,8vw,112px)}
+.intro h1{font-size:clamp(54px,9vw,132px);letter-spacing:-.05em;line-height:.94}
+.intro p{font-size:clamp(20px,1.9vw,25px);line-height:1.35;max-width:760px;margin-top:20px}
+.s{padding-block:clamp(56px,7vw,100px);border-bottom:1px solid var(--line)}
+.s h2{font-size:clamp(38px,5vw,68px)}
+.lead{max-width:680px;margin-top:14px;color:var(--ink-2)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+.tile{border-radius:var(--r);min-height:260px;display:flex;align-items:center;justify-content:center;background:var(--mist);position:relative;padding:20px}
+.tile .logo b{font-size:clamp(44px,5vw,66px)}.tile .logo small{font-size:clamp(17px,1.95vw,26px);margin-top:6px}.tile .logo small.yr{font-size:clamp(14px,1.45vw,20px);margin-top:4px}
+.cap{font-size:16px;color:var(--ink-2);margin-top:9px}
+.ic{width:132px;height:132px;border-radius:30px;background:var(--noon);display:grid;place-items:center}
+.ic svg{height:92px;width:auto;fill:var(--ink)}
+.rules{margin-top:22px;columns:2;column-gap:44px;max-width:900px;padding-left:20px}
+.rules li{margin-bottom:8px;break-inside:avoid}
+.m{border-radius:var(--r);padding:22px;min-height:360px;display:flex;flex-direction:column}
+.m h3{font-size:clamp(32px,3vw,42px)}
+.m p{font-size:17px;margin-top:6px}
+.m .hx{margin-top:auto;font-size:15px;font-variant-numeric:tabular-nums;line-height:1.5}
+.m.a{background:var(--dawn)}.m.b{background:var(--noon)}.m.c{background:var(--dusk)}.m.d{background:var(--dark);color:#fff}
+.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}
+.sw{border-radius:18px;padding:16px;min-height:132px;display:flex;flex-direction:column;justify-content:flex-end;font-size:16px;box-shadow:inset 0 0 0 1px rgba(12,35,64,.08)}
+.sw b{font-weight:600}
+.ty{margin-top:30px;border-top:2px solid var(--ink)}
+.ty div{display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.ty span{font-size:16px;color:var(--ink-2)}
+.ana{display:grid;grid-template-columns:1fr 340px 1fr;gap:24px;align-items:center;margin-top:30px}
+.ana .bt{display:flex;justify-content:center}.ana .bt .p{height:clamp(380px,38vw,560px)}
+.nt{margin-bottom:22px}
+.nt b{display:block;font-weight:600;font-size:20px}
+.nt span{color:var(--ink-2)}
+.ana .rt{text-align:right}
+.range{display:flex;align-items:flex-end;justify-content:center;gap:0;flex-wrap:wrap;margin-top:34px;row-gap:26px}
+.range .p{height:clamp(120px,10.6vw,168px);margin-inline:2px}.range .p.j{height:clamp(88px,7.75vw,122px)}
+.cl{border-collapse:collapse;width:100%;min-width:680px}
+.scroll{overflow-x:auto;margin-top:26px}
+.cl th{text-align:left;font-size:16px;font-weight:600;padding:10px 16px 10px 0;border-bottom:2px solid var(--ink)}
+.cl td{padding:14px 16px 14px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.cl td:first-child{color:#8C2A22}
+.cl td:nth-child(2){font-weight:500}
+.vo{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.vo div{background:var(--mist);border-radius:var(--r);padding:24px}
+.vo b{display:block;font-size:26px;font-weight:500;letter-spacing:-.02em}
+.vo p{margin-top:8px;color:var(--ink-2)}
+.ph{border-radius:var(--r);min-height:240px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;background:repeating-linear-gradient(135deg,var(--mist) 0 14px,#fff 14px 28px);box-shadow:inset 0 0 0 1px var(--line)}
+.ph b{font-size:22px;font-weight:600}
+@media (max-width:1040px){.g4{grid-template-columns:1fr 1fr}.swatches{grid-template-columns:repeat(3,1fr)}.ana{grid-template-columns:1fr}.ana .rt{text-align:left}.ana .bt{order:-1}}
+@media (max-width:640px){.g3,.vo{grid-template-columns:1fr}.g4{grid-template-columns:1fr}.m{min-height:0;gap:18px}.swatches{grid-template-columns:1fr 1fr}.rules{columns:1}.ty div{grid-template-columns:1fr;gap:4px}.range .p{height:112px}.range .p.j{height:82px}}
+</style>
+</head>
+<body>
+<header class="hdr" data-hdr></header>
+<main>
+<section class="intro"><div class="wrap">
+  <p class="eyebrow">Brand system, draft</p>
+  <h1>Daylight</h1>
+  <p>One visual system for the full range, built on the existing palm and Pacific blue.</p>
+</div></section>
+
+<section class="s"><div class="wrap">
+  <h2>Logo</h2>
+  <p class="lead">The palm remains the “l” in california, redrawn to hold up at small sizes.</p>
+  <div class="g3">
+    <div><div class="tile" data-logo></div><p class="cap">Primary, on light</p></div>
+    <div><div class="tile" style="background:var(--ink);color:#fff" data-logo></div><p class="cap">Reversed, on ink</p></div>
+    <div><div class="tile" style="background:var(--noon)" data-logo></div><p class="cap">On a moment color</p></div>
+  </div>
+  <div class="g3">
+    <div><div class="tile"><div class="ic"><svg viewBox="0 0 40 62" aria-hidden="true"><use href="#palm"/></svg></div></div><p class="cap">Palm alone, for icons, caps and social</p></div>
+    <div style="grid-column:span 2"><ul class="rules" style="margin-top:0"><li>Always ink or white, never a gradient.</li><li>Keep clear space equal to the height of the “a” on all sides.</li><li>Minimum width: 96px on screen, 22mm in print.</li><li>Below that size, use the palm alone.</li><li>One public name: “California Physicians Supplements,” with “Since 2005” directly beneath it in the logo. Retire “CA Supplements” and “CPS” in customer copy.</li></ul></div>
+  </div>
+</div></section>
+
+<section class="s"><div class="wrap">
+  <h2>Color</h2>
+  <p class="lead">Four time-of-day palettes replace individual product colors.</p>
+  <div class="g4">
+    <div class="m a"><h3>Morning</h3><p>Morning foundations</p><p class="hx">#FFF3CC · #FFC685 · #FFA274<br><span data-c="#0C2340,#FFA274"></span></p></div>
+    <div class="m b"><h3>Midday</h3><p>Joints, bones, activity</p><p class="hx">#CDF1FC · #7FD0F2 · #2CABE0<br><span data-c="#0C2340,#2CABE0"></span></p></div>
+    <div class="m c"><h3>Evening</h3><p>Evening recovery</p><p class="hx">#FFC594 · #FF8F78 · #EC5F8C<br><span data-c="#0C2340,#EC5F8C"></span></p></div>
+    <div class="m d"><h3>Night</h3><p>Sleep and calm</p><p class="hx">#433FA6 · #1E2169 · #0E1240<br><span data-c="#FFFFFF,#433FA6"></span></p></div>
+  </div>
+  <div class="swatches">
+    <div class="sw" style="background:#0C2340;color:#fff"><b>Ink</b>#0C2340</div>
+    <div class="sw" style="background:#2CABE0"><b>Pacific</b>#2CABE0</div>
+    <div class="sw" style="background:#F1F7FA"><b>Mist</b>#F1F7FA</div>
+    <div class="sw" style="background:#FFD98B"><b>Sun</b>#FFD98B</div>
+    <div class="sw" style="background:#fff"><b>White</b>#FFFFFF</div>
+  </div>
+  <p class="cap">Contrast figures show the worst case for text on each gradient. All clear the 4.5:1 WCAG AA level for body text.</p>
+</div></section>
+
+<section class="s"><div class="wrap">
+  <h2>Typography</h2>
+  <p class="lead">Host Grotesk is a free stand-in for this draft. The final choice could be a licensed or custom face with the same warm, round character.</p>
+  <div class="ty">
+    <div><span>Display, 500, sentence case</span><p style="font-size:clamp(46px,7vw,96px);letter-spacing:-.05em;font-weight:500;line-height:1">Made for every day.</p></div>
+    <div><span>Heading, 500, sentence case</span><p style="font-size:clamp(32px,4vw,52px);letter-spacing:-.035em;font-weight:500;line-height:1.05">Sample section heading</p></div>
+    <div><span>Body, 400, sentence case, 18px minimum</span><p>Sample body copy, shown at the minimum size.</p></div>
+    <div><span>Label, 600, 16px minimum</span><p style="font-size:16px;font-weight:600">Sample label text</p></div>
+  </div>
+  <ul class="rules"><li>Headlines use sentence case.</li><li>Product names are lowercase on pack and title case in sentences.</li><li>No text under 16px, apart from required legal and label copy.</li><li>Tap targets are at least 48px tall.</li></ul>
+</div></section>
+
+<section class="s"><div class="wrap">
+  <h2>Packaging</h2>
+  <p class="lead">Every pack uses one layout across the range.</p>
+  <div class="ana">
+    <div>
+      <div class="nt"><b>Palm</b><span>Top left, always the same size</span></div>
+      <div class="nt"><b>Moment color</b><span>Whole pack, cap included</span></div>
+      <div class="nt"><b>Product name</b><span>Lowercase, two lines</span></div>
+    </div>
+    <div class="bt" id="ana"></div>
+    <div class="rt">
+      <div class="nt"><b>The dose line</b><span>Sample label amounts</span></div>
+      <div class="nt"><b>Clean front panel</b><span>Details move to the back panel</span></div>
+      <div class="nt"><b>Back panel</b><span>Supplement Facts, directions, full brand name</span></div>
+    </div>
+  </div>
+  <div class="range" id="range"></div>
+  <p class="cap" style="text-align:center">Thirteen products from the range, in day order. Packs are illustrations for review, not production art.</p>
+</div></section>
+
+<section class="s"><div class="wrap">
+  <h2>Voice</h2>
+  <div class="vo">
+    <div><b>Clear</b><p>Use plain language and short sentences.</p></div>
+    <div><b>Factual</b><p>Describe what’s in the product. Avoid superlatives.</p></div>
+    <div><b>Professional</b><p>Speak to adults of every age.</p></div>
+  </div>
+  </div></section>
+
+<section class="s" style="border:0"><div class="wrap">
+  <h2>Photography</h2>
+  <p class="lead">Photography direction: real people of different ages, in natural California light.</p>
+  <div class="g3">
+    <div class="ph"><b>Early light</b><span>Morning walks and daily routines, with natural light.</span></div>
+    <div class="ph"><b>Active living</b><span>Gardening, surfing and time with family.</span></div>
+    <div class="ph"><b>Product in use</b><span>The product at home, on a counter or bedside table.</span></div>
+  </div>
+</div></section>
+</main>
+<footer class="foot"><div class="wrap" data-ft></div></footer>
+<script src="whats-inside.js"></script>
+<script src="daylight.js"></script>
+<script>
+chrome();
+document.querySelectorAll('[data-logo]').forEach(t=>t.innerHTML=`<span class="logo">${logoInner}</span>`);
+document.getElementById('ana').innerHTML=mk('joint');
+document.getElementById('range').innerHTML=['total','green','fiber','defense','joint','jpower','bone','omega','repair','skin','calm','rest'].map(k=>mk(k)).join('')+mk('whey');
+const lum=h=>{const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:((v+.055)/1.055)**2.4);return .2126*c[0]+.7152*c[1]+.0722*c[2]};
+document.querySelectorAll('[data-c]').forEach(e=>{const [a,b]=e.dataset.c.split(',').map(lum),r=(Math.max(a,b)+.05)/(Math.min(a,b)+.05);e.textContent=`Text contrast ${r.toFixed(1)}:1`});
+</script>
+</body>
+</html>

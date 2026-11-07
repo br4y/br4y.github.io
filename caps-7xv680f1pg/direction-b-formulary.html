@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Direction B: Formulary (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@300..700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#08182A;--ink2:#112A44;--paper:#F2F5F7;--white:#fff;--mute:#4E6275;--mute-d:#A9BBCB;--line:#D3DCE3;--line-d:#27415C;--cy:#19B5F1;--cy-d:#0677A8;--gut:clamp(16px,4vw,56px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Geist,system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+:focus-visible{outline:3px solid var(--cy);outline-offset:3px}
+.m{font-family:"Geist Mono",ui-monospace,monospace;font-size:15px;letter-spacing:-.01em}
+.wrap{max-width:1440px;margin:0 auto;padding-inline:var(--gut)}
+h1,h2,h3{font-weight:500;letter-spacing:-.045em;line-height:.98}
+h2{font-size:clamp(40px,5.6vw,80px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:58px;padding:0 28px;background:var(--cy);color:var(--ink);font-weight:600;border-radius:4px;transition:background .15s}
+.btn:hover{background:#fff}
+.btn.o{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+.btn.o:hover{background:rgba(127,160,190,.16)}
+.dark{background:var(--ink);color:#fff}
+
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:80px;border-bottom:1px solid var(--line-d)}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:21px;letter-spacing:-.03em;line-height:1.08}
+.logo small{display:block;font-size:13px;font-weight:400;letter-spacing:0;margin-top:3px;color:var(--mute-d)}
+.logo svg{height:32px;width:21px;fill:var(--cy)}
+.links{display:flex;gap:32px;font-size:17px}
+.links a{padding:10px 0}
+.acts{display:flex;gap:18px;align-items:center}
+.tag{border:1px solid var(--line-d);padding:3px 9px;border-radius:3px;color:var(--mute-d)}
+
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:end;min-height:690px}
+.hero .l{padding-block:clamp(44px,6vw,84px)}
+.hero .k{color:var(--cy);margin-bottom:24px}
+.hero h1{font-size:clamp(66px,11.4vw,176px);letter-spacing:-.06em;line-height:.9}
+.hero p{max-width:520px;font-size:clamp(19px,1.6vw,22px);margin-top:28px;color:#D2DEE8}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero .r{align-self:stretch;position:relative;display:flex;justify-content:center;align-items:flex-end;overflow:hidden;min-height:440px}
+.hero .r::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--line-d) 1px,transparent 1px) 0 0/100% 80px,linear-gradient(90deg,var(--line-d) 1px,transparent 1px) 0 0/80px 100%;opacity:.45}
+.hero .p{position:relative;height:640px;transform:translateY(44px)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-d)}
+.facts div{padding:20px 20px 24px 0}
+.facts div+div{border-left:1px solid var(--line-d);padding-left:20px}
+.facts b{display:block;font-size:clamp(25px,2.6vw,38px);font-weight:500;letter-spacing:-.04em;line-height:1.05}
+.facts span{color:var(--mute-d)}
+
+.sec{padding-block:clamp(72px,9vw,128px)}
+.lab{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(32px,5vw,80px)}
+.lab .k,.k2{color:var(--cy-d);margin-bottom:18px}
+.lab .p2{font-size:clamp(19px,1.6vw,22px);color:var(--mute);max-width:560px;margin-top:22px}
+.dose{margin-top:44px;border-top:2px solid var(--ink)}
+.dose div{display:grid;grid-template-columns:1.25fr 1fr;align-items:baseline;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.dose b{font-size:clamp(46px,6.6vw,96px);font-weight:400;letter-spacing:-.055em;line-height:1}
+.dose small{font-size:.42em;letter-spacing:-.02em}
+.dose span{font-size:20px}
+.buy{background:#fff;border-radius:8px;padding:clamp(20px,2.4vw,32px);align-self:start;position:sticky;top:20px}
+.buy .pw{background:var(--paper);border-radius:6px;display:flex;justify-content:center;height:340px;overflow:hidden;align-items:flex-end}
+.buy .p{height:356px;transform:translateY(32px)}
+.buy h3{font-size:32px;margin-top:20px;letter-spacing:-.035em}
+.buy .s{color:var(--mute);margin-top:6px}
+.opt{display:flex;justify-content:space-between;gap:12px;padding:15px;border:1.5px solid var(--line);border-radius:5px;margin-top:10px;width:100%;text-align:left}
+.opt[aria-pressed=true]{border-color:var(--ink);box-shadow:inset 0 0 0 .5px var(--ink)}
+.buy .btn{width:100%;margin-top:14px;background:var(--ink);color:#fff}
+.buy .btn:hover{background:var(--ink2)}
+.tip{margin-top:12px;color:var(--mute);font-size:16px}
+
+.fh{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:30px}
+.fh p{max-width:430px;color:var(--mute-d)}
+.f{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.f button{min-height:46px;padding:0 15px;border:1px solid var(--line-d);border-radius:4px;color:#DCE6EE}
+.f button[aria-pressed=true]{background:var(--cy);border-color:var(--cy);color:var(--ink);font-weight:500}
+.tb{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line-d);border:1px solid var(--line-d)}
+.tl{background:var(--ink);padding:14px;min-height:178px;display:flex;flex-direction:column;transition:background .12s,color .12s}
+.tl:hover{background:#fff;color:var(--ink)}
+.tl:hover .fm{color:var(--mute)}
+.tl .tp{display:flex;justify-content:space-between;color:var(--cy)}
+.tl:hover .tp{color:var(--cy-d)}
+.tl .sy{font-size:44px;font-weight:400;letter-spacing:-.05em;line-height:1;margin-top:12px}
+.tl .nm{margin-top:auto;font-weight:500;line-height:1.2;font-size:18px}
+.tl .fm{color:var(--mute-d);display:flex;justify-content:space-between;gap:6px;margin-top:3px}
+.tl.out{display:none}
+
+.pr{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.pc{background:#fff;border-radius:8px;padding:24px;display:flex;flex-direction:column;min-height:330px}
+.pc h3{font-size:clamp(30px,3vw,42px);margin-top:12px}
+.pc ol{list-style:none;padding:0;margin:18px 0;flex:1}
+.pc li{padding:9px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}
+.pc li span{color:var(--mute)}
+.pc .ft{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pc .ft .btn{min-height:50px;background:var(--ink);color:#fff;padding:0 20px}
+.pc s{color:var(--mute);margin-left:6px}
+
+.ph{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(32px,5vw,80px)}
+.tbl{border-top:1px solid var(--line-d)}
+.tbl div{display:grid;grid-template-columns:1fr 1.2fr;gap:18px;padding:17px 0;border-bottom:1px solid var(--line-d)}
+.tbl b{font-weight:500;font-size:21px;letter-spacing:-.02em}
+.tbl span{color:var(--mute-d)}
+
+.rv{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.rv>div{padding:22px 24px 8px 0}
+.rv>div+div{padding-left:24px;border-left:1px solid var(--line)}
+.rv b{display:block;font-size:clamp(48px,6vw,80px);font-weight:400;letter-spacing:-.055em;line-height:1}
+.rv p{font-size:20px;line-height:1.35;margin-top:14px}
+.rv .m{color:var(--mute);margin-top:12px}
+
+footer{padding-block:56px 32px}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px}
+.fg h4{font-weight:500;color:var(--mute-d);margin-bottom:8px}
+.fg a:not(.logo){display:block;padding:4px 0}
+.fine{margin-top:32px;padding-top:16px;border-top:1px solid var(--line-d);color:var(--mute-d);font-size:15px}
+
+@media (max-width:1040px){
+ .nav{flex-wrap:wrap;height:auto;padding-block:12px;row-gap:6px}.links{order:3;width:100%;flex-wrap:wrap;gap:2px 22px;font-size:16px}.links a{padding:6px 0}.hero{grid-template-columns:1fr;min-height:0}.hero .r{height:420px;min-height:0}.hero .p{height:560px;transform:translateY(120px)}
+ .lab,.ph{grid-template-columns:1fr}.buy{position:static}.tb{grid-template-columns:repeat(3,1fr)}.pr{grid-template-columns:1fr}.pc{min-height:0}
+}
+@media (max-width:640px){
+ .facts{grid-template-columns:1fr 1fr}.facts div:nth-child(3){border-left:0;padding-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--line-d)}
+ .dose div{grid-template-columns:1fr}
+ .tb{grid-template-columns:1fr 1fr}.tl{min-height:150px}.tl .sy{font-size:36px}
+ .rv{grid-template-columns:1fr}.rv>div{padding:20px 0}.rv>div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+ .tbl div{grid-template-columns:1fr;gap:2px}
+ .fg{grid-template-columns:1fr 1fr}.fg>div:first-child{grid-column:1/-1}
+ .f{flex-wrap:nowrap;overflow-x:auto;margin-inline:calc(var(--gut)*-1);padding-inline:var(--gut);scrollbar-width:none}.f button{flex:none}
+ .tag{display:none}
+ .logo{font-size:18px}
+ .hero .r{height:500px}.hero .p{height:480px;transform:translateY(20px)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+ <symbol id="palm" viewBox="0 0 40 62"><path d="M20 20C14 8 4 8 0 16c7-3 13-2 20 4Z"/><path d="M20 20C12 16 2 20 1 31c5-7 11-10 19-11Z"/><path d="M20 20c6-12 16-12 20-4-7-3-13-2-20 4Z"/><path d="M20 20c8-4 18 0 19 11-5-7-11-10-19-11Z"/><path d="M20 20c-3-8-2-15 3-19 0 6 0 12-3 19Z"/><path d="M18.400 20.500c.6 14-.4 28-2.900 41.500h5.300c1.600-13.500 1.700-28 .8-41.500Z"/></symbol>
+ <linearGradient id="bd"><stop offset="0" stop-color="#C5CFD8"/><stop offset=".12" stop-color="#F1F4F6"/><stop offset=".3" stop-color="#fff"/><stop offset=".75" stop-color="#F6F8F9"/><stop offset="1" stop-color="#BCC7D1"/></linearGradient>
+ <linearGradient id="cp"><stop offset="0" stop-color="#050E19"/><stop offset=".25" stop-color="#28435F"/><stop offset=".55" stop-color="#0E2237"/><stop offset="1" stop-color="#040B14"/></linearGradient>
+ <pattern id="rg" width="7" height="10" patternUnits="userSpaceOnUse"><rect width="1.400" height="10" fill="#fff" opacity=".1"/></pattern>
+ <symbol id="bottle" viewBox="0 0 240 420">
+  <rect x="58" y="2" width="124" height="72" rx="6" fill="url(#cp)"/><rect x="58" y="2" width="124" height="72" rx="6" fill="url(#rg)"/>
+  <rect x="74" y="72" width="92" height="16" fill="url(#bd)"/>
+  <rect x="16" y="84" width="208" height="334" rx="30" fill="url(#bd)"/>
+  <g fill="#08182A">
+   <svg x="38" y="108" width="20" height="31" style="fill:#0E9BD4"><use href="#palm"/></svg>
+   <text x="38" y="164" font-size="9.700" font-weight="500" letter-spacing="-.15">California Physicians Supplements</text><text x="38" y="177" font-size="8.500">Since 2005</text>
+   <text x="38" y="232" font-size="44" font-weight="500" letter-spacing="-2.600">Joint</text>
+   <text x="38" y="274" font-size="44" font-weight="500" letter-spacing="-2.600">Care</text>
+   <rect x="38" y="296" width="164" height="1.500"/>
+   <g font-family="Geist Mono,monospace" font-size="10.500">
+    <text x="38" y="316">Glucosamine HCl</text><text x="202" y="316" text-anchor="end">1500 mg</text>
+    <text x="38" y="334">Chondroitin</text><text x="202" y="334" text-anchor="end">1200 mg</text>
+    <rect x="38" y="344" width="164" height=".8"/>
+    <text x="38" y="362">3 capsules daily</text><text x="202" y="362" text-anchor="end">90 ct</text>
+   </g>
+   <text x="38" y="392" font-size="9.500" opacity=".7">Dietary supplement</text>
+  </g>
+ </symbol>
+</defs></svg>
+
+<div class="dark">
+ <div class="wrap">
+  <div class="nav">
+   <a class="logo" href="#" aria-label="California Physicians Supplements home"><svg viewBox="0 0 40 62" aria-hidden="true"><use href="#palm"/></svg><span class="lt">California Physicians Supplements<small>Since 2005</small></span></a>
+   <nav class="links" aria-label="Main"><a href="#formulary">Formulary</a><a href="#protocols">Programs</a><a href="#label">Labels</a><a href="#board">Physicians</a></nav>
+   <div class="acts"><span class="tag m">Concept</span><a href="#formulary">Cart 0</a></div>
+  </div>
+  <section class="hero">
+   <div class="l">
+    <p class="k m">Since 2005</p>
+    <h1>Know<br>what’s<br>inside.</h1>
+    <p>A clear, label-first way to browse the full range.</p>
+    <div class="cta"><a class="btn" href="#formulary">Open the formulary</a><a class="btn o" href="#label">Read the label</a></div>
+   </div>
+   <div class="r"><svg class="p" viewBox="0 0 240 420" role="img" aria-label="Joint Care bottle"><use href="#bottle"/></svg></div>
+  </section>
+  <div class="facts">
+   <div><b>2005</b><span>Established</span></div>
+   <div><b>47</b><span>Products and programs</span></div>
+   <div><b>4.9 / 5</b><span>Joint Care, 39 reviews</span></div>
+   <div><b>30 days</b><span>Return policy</span></div>
+  </div>
+ </div>
+</div>
+
+<section class="sec wrap" id="label">
+ <div class="lab">
+  <div>
+   <p class="k m">Read the label</p>
+   <h2>Read the label.</h2>
+   <p class="p2">Amounts appear first, in type that is easy to read. From the current Joint Care label.</p>
+   <div class="dose">
+    <div><b>1,500<small> mg</small></b><span>Glucosamine HCl</span></div>
+    <div><b>1,200<small> mg</small></b><span>Chondroitin sulfate</span></div>
+    <div><b>3</b><span>Capsules per serving</span></div>
+   </div>
+  </div>
+  <aside class="buy" aria-label="Joint Care purchase">
+   <div class="pw"><svg class="p" viewBox="0 0 240 420" role="img" aria-label="Joint Care bottle"><use href="#bottle"/></svg></div>
+   <h3>Joint Care</h3>
+   <p class="s">Glucosamine and chondroitin capsules. 4.9 / 5, 39 reviews.</p>
+   <div id="opts">
+    <button class="opt" aria-pressed="true"><span>Subscribe, free shipping + 10% off</span><span class="m">$53.98</span></button>
+    <button class="opt" aria-pressed="false"><span>One-time purchase</span><span class="m">$59.98</span></button>
+   </div>
+   <a class="btn" href="#">Add to cart</a>
+   <p class="tip">Three capsules a day. We suggest keeping it by your toothbrush.</p>
+  </aside>
+ </div>
+</section>
+
+<section class="dark sec" id="formulary"><div class="wrap">
+ <div class="fh"><h2>Product formulary</h2><p>Select any product to view its full label.</p></div>
+ <div class="f" id="fl" role="group" aria-label="Filter by body system"></div>
+ <div class="tb" id="tb"></div>
+</div></section>
+
+<section class="sec wrap" id="protocols">
+ <p class="k2 m">Programs</p>
+ <h2>Programs</h2>
+ <div class="pr">
+  <article class="pc"><span class="m" style="color:var(--cy-d)">Mobility</span><h3>Joint &amp; Mobility</h3><ol><li>Joint Care, Joint Power and Miracle Balm</li><li><span>Bundle saving</span><span>$47.79</span></li></ol><div class="ft"><span><b>$191.17</b><s>$238.96</s></span><a class="btn" href="#">Add</a></div></article>
+  <article class="pc"><span class="m" style="color:var(--cy-d)">Sleep</span><h3>Sleep &amp; Stress</h3><ol><li>Placeholder. Bundle contents to be supplied.</li><li><span>Bundle saving</span><span>$19.49</span></li></ol><div class="ft"><span><b>$110.47</b><s>$129.96</s></span><a class="btn" href="#">Add</a></div></article>
+  <article class="pc"><span class="m" style="color:var(--cy-d)">Bone</span><h3>Bone Build</h3><ol><li>Bone Care, Vitamin D3 and Green Power</li><li><span>Format</span><span>Program</span></li></ol><div class="ft"><span><b>$162.86</b></span><a class="btn" href="#">Add</a></div></article>
+ </div>
+</section>
+
+<section class="dark sec" id="board"><div class="wrap ph">
+ <div><p class="m" style="color:var(--cy);margin-bottom:18px">The physicians</p><h2>Our physicians</h2><p style="color:var(--mute-d);margin-top:20px;max-width:420px">Placeholder. Names and credentials to be supplied and approved.</p></div>
+ <div class="tbl">
+  <div><b>Physician name</b><span>Title and credentials</span></div>
+  <div><b>Physician name</b><span>Title and credentials</span></div>
+  <div><b>Physician name</b><span>Title and credentials</span></div>
+ </div>
+</div></section>
+
+<section class="sec wrap">
+ <p class="k2 m">Customer reviews</p>
+ <div class="rv">
+  <div><b>15 years</b><p>“I have been a faithful JOINT user for at least 15 years.”</p><p class="m">Judy D., Joint Care</p></div>
+  <div><b>Loyal</b><p>“Over the years, I’ve sampled other Glucosamine brands, but always return to this.”</p><p class="m">Barbara R., Joint Care</p></div>
+  <div><b>Repeat</b><p>“This is my fourth order and will be ordering again.”</p><p class="m">Jackie N., 6-SL</p></div>
+ </div>
+</section>
+
+<footer class="dark"><div class="wrap">
+ <div class="fg">
+  <div><a class="logo" href="#" aria-label="California Physicians Supplements home"><svg viewBox="0 0 40 62" aria-hidden="true"><use href="#palm"/></svg><span class="lt">California Physicians Supplements<small>Since 2005</small></span></a></div>
+  <div><h4>Shop</h4><a href="#formulary">Formulary</a><a href="#protocols">Programs</a><a href="#">Subscribe</a></div>
+  <div><h4>Learn</h4><a href="#label">The label</a><a href="#board">Physicians</a><a href="#">Research</a></div>
+  <div><h4>Help</h4><a href="#">Contact us</a><a href="#">Shipping</a><a href="#">Refunds</a></div>
+ </div>
+ <p class="fine">Design concept prepared for California Physicians Supplements. Not a live site. Prices, reviews, policies and label details are from casupplements.com, viewed November 6, 2026.</p>
+</div></footer>
+
+<script src="whats-inside.js"></script>
+<script>
+const S={all:'All',joint:'Joints + bone',gut:'Gut',sleep:'Sleep + calm',imm:'Immune',heart:'Heart',skin:'Skin + hair',men:"Men's",daily:'Daily + active'};
+const R=`Jc|Joint Care|Capsules|59.98|joint
+Jp|Joint Power|Powder|89.98|joint
+Bc|Bone Care|Tablets|59.99|joint
+Rl|Relieve|Capsules|59.98|joint
+Np|Nerve Pro|Capsules|59.98|joint
+Mb|Miracle Balm|Topical|89.00|joint
+Fc|Fiber Care|Capsules|44.98|gut
+Gr|Gut Repair|Powder|74.98|gut
+Pb|Probiotic|Powder|79.98|gut
+Bf|Biofilm|Capsules|59.98|gut
+Ya|Yeast Aide|Capsules|54.98|gut
+Ic|Inner Calm|Powder|69.98|sleep
+Rr|Rest & Relax|Capsules|59.98|sleep
+Bd|Best Defense|Capsules|44.98|imm
+Mi|Mushroom Immune|Powder|154.98|imm
+Mc|Magnum C|Capsules|39.98|imm
+D3|Vitamin D3|Softgels|39.98|imm
+Om|Omega Power|Softgels|59.98|heart
+Cc|Cholesterol Care|Capsules|49.98|heart
+St|SkinTight|Powder|89.98|skin
+Be|Beauty Essentials|Tablets|84.98|skin
+Te|Testro|Capsules|94.99|men
+Pf|Pro-form|Capsules|49.98|men
+Tb|Total Body|Capsules|84.98|daily
+Gp|Green Power|Powder|80.98|daily
+Wp|Whey Power|Powder|135.00|daily
+Ef|Energy + Fat Burn|Powder|69.98|daily
+Wc|Weight Control|Capsules|69.98|daily
+Eh|Eye Health|Capsules|49.98|daily
+6s|6-SL|Powder|125.00|daily`.split('\n').map(l=>l.split('|'));
+const KEY={Jc:'joint',Jp:'jpower',Bc:'bone',Rl:'relieve',Np:'nerve',Mb:'balm',Fc:'fiber',Gr:'repair',Pb:'probiotic',Bf:'biofilm',Ya:'yeast',Ic:'calm',Rr:'rest',Bd:'defense',Mi:'mushroom',Mc:'magnum',D3:'d3',Om:'omega',Cc:'cholesterol',St:'skin',Be:'beauty',Te:'testro',Pf:'proform',Tb:'total',Gp:'green',Wp:'whey',Ef:'energy',Wc:'weight',Eh:'eye','6s':'sl6'};
+tb.innerHTML=R.map((r,i)=>`<a class="tl" href="#" data-s="${r[4]}" data-inside="${KEY[r[0]]}" aria-label="${r[1].replace('&','&amp;')}: what’s inside"><div class="tp m"><span>${String(i+1).padStart(2,'0')}</span></div><div class="sy">${r[0]}</div><div class="nm">${r[1].replace('&','&amp;')}</div><div class="fm m"><span>${r[2]}</span><span>$${r[3]}</span></div></a>`).join('');
+fl.innerHTML=Object.entries(S).map(([k,v],i)=>`<button data-k="${k}" aria-pressed="${!i}">${v}</button>`).join('');
+fl.onclick=e=>{const b=e.target.closest('button');if(!b)return;[...fl.children].forEach(c=>c.setAttribute('aria-pressed',c==b));[...tb.children].forEach(t=>t.classList.toggle('out',b.dataset.k!='all'&&t.dataset.s!=b.dataset.k))};
+opts.onclick=e=>{const b=e.target.closest('.opt');if(!b)return;[...opts.children].forEach(c=>c.setAttribute('aria-pressed',c==b))};
+</script>
+</body>
+</html>

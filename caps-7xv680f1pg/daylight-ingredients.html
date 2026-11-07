@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>What's Inside: Daylight (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="daylight.css">
+<style>
+.ih{background:linear-gradient(180deg,#8ED3F5,#FBE9CF 80%,#fff);padding-block:clamp(48px,7vw,96px) 40px}
+.ih h1{font-size:clamp(50px,8vw,120px);letter-spacing:-.05em;line-height:.95}
+.ih p{font-size:clamp(20px,1.8vw,24px);max-width:680px;margin-top:16px;line-height:1.35}
+.sr{width:100%;max-width:720px;min-height:64px;border:2px solid var(--ink);border-radius:99px;padding:0 26px;font:inherit;font-size:20px;margin-top:26px;background:#fff;color:var(--ink)}
+.fl{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.fl button{min-height:46px;padding:0 18px;border-radius:99px;background:#fff;font-weight:500;box-shadow:inset 0 0 0 1.5px var(--line)}
+.fl button[aria-pressed=true]{background:var(--ink);color:#fff}
+.cnt{margin-top:22px;font-weight:600}
+.list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-block:12px 80px}
+.it{background:var(--mist);border-radius:22px;padding:22px;text-align:left;display:flex;flex-direction:column;gap:6px;min-height:176px}
+.it:hover{background:#E4F2F8}
+.it b{font-size:25px;font-weight:500;letter-spacing:-.02em}
+.it span{font-size:16px;color:var(--ink-2)}
+.it .a{margin-top:auto;font-weight:600;color:var(--ink)}
+@media (max-width:1040px){.list{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.list{grid-template-columns:1fr}.it{min-height:0}}
+</style>
+</head>
+<body>
+<div class="bar">Free U.S. shipping on orders over $100</div>
+<header class="hdr" data-hdr></header>
+<main>
+<section class="ih"><div class="wrap">
+  <h1>What’s inside</h1>
+  <p>Search the range by ingredient. Based on labels on casupplements.com. Always check the product label.</p>
+  <label><span style="position:absolute;left:-9999px">Search ingredients</span><input class="sr" id="q" type="search" placeholder="Try magnesium, melatonin or collagen"></label>
+  <div class="fl" id="fl"></div>
+</div></section>
+<section class="wrap">
+  <p class="cnt" id="cnt" aria-live="polite"></p>
+  <div class="list" id="list"></div>
+</section>
+</main>
+<footer class="foot"><div class="wrap" data-ft></div></footer>
+<script src="whats-inside.js"></script>
+<script src="daylight.js"></script>
+<script>
+chrome();
+const text=l=>[l.n,...(l.f||[]).map(x=>x[0]),...(l.b||[]).map(x=>x[0]+' '+x[2]),l.o||'',l.al||''].join(' ').toLowerCase();
+const FL=[['','All formulas'],['caps','Capsules and tablets'],['drink','Drinks and powders']];
+fl.innerHTML=FL.map((f,i)=>`<button data-f="${f[0]}" aria-pressed="${!i}">${f[1]}</button>`).join('');
+let cur='';
+function pass(l){const t=text(l);if(cur=='caps')return /Capsules|Tablets|Softgels/.test(l.form);if(cur=='drink')return l.form=='Powder';
+ return true}
+function draw(){const v=q.value.trim().toLowerCase(),r=Object.entries(LABELS).filter(([k,l])=>pass(l)&&(!v||text(l).includes(v)));
+ cnt.textContent=`${r.length} ${r.length==1?'formula':'formulas'}`;
+ list.innerHTML=r.map(([k,l])=>`<button class="it" data-inside="${k}"><b>${l.n}</b><span>${l.form}</span><span>${l.missing?'Label to be confirmed':keyDose(k)}</span><span class="a">See what’s inside</span></button>`).join('')}
+q.oninput=draw;fl.onclick=e=>{const b=e.target.closest('button');if(!b)return;cur=b.dataset.f;[...fl.children].forEach(c=>c.setAttribute('aria-pressed',c==b));draw()};draw();
+</script>
+</body>
+</html>

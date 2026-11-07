@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Direction A: Daylight (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="daylight.css">
+<style>
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#7ACBF0 0%,#B4E2F4 34%,#FBE9CF 66%,#FFC796 82%);text-align:center;padding-top:122px}
+.hero h1{font-size:clamp(54px,8vw,132px);letter-spacing:-.05em;line-height:.93;position:relative;z-index:2}
+.hero p{max-width:620px;margin:20px auto 0;font-size:clamp(19px,1.6vw,23px);position:relative;z-index:2}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;position:relative;z-index:2}
+.stage{position:relative;height:clamp(300px,33vw,500px);margin-top:0}
+.sun{position:absolute;left:50%;bottom:-16%;width:clamp(460px,62vw,960px);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 40%,#FFF6D2 0%,#FFD98B 46%,#FFB46B 100%);opacity:.95}
+.floor{position:absolute;inset:auto 0 0;height:15%;background:#fff}
+.line{position:absolute;inset:auto 0 0;display:flex;justify-content:center;align-items:flex-end;padding-bottom:3.4%;z-index:2}
+.line .p{height:clamp(190px,25vw,400px);margin-inline:-.4vw}
+.line .p.j{height:clamp(138px,18.2vw,290px)}
+.p{display:block;width:auto;overflow:visible}
+
+/* proof */
+.proof{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-bottom:1px solid var(--line)}
+.proof div{padding:22px 18px;font-weight:500;text-align:center;font-size:18px;border-left:1px solid var(--line)}
+.proof div:first-child{border-left:0}
+.proof span{display:block;color:var(--ink-2);font-weight:400;font-size:16px}
+
+/* day */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:44px;flex-wrap:wrap}
+.head p{max-width:440px;color:var(--ink-2)}
+.day{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.t{position:relative;border-radius:var(--r);padding:26px 26px 0;min-height:600px;display:flex;flex-direction:column;overflow:hidden;transition:transform .2s}
+.t:hover{transform:translateY(-6px)}
+.t.a{background:var(--dawn)}.t.b{background:var(--noon)}.t.c{background:var(--dusk)}.t.d{background:var(--dark);color:#fff}
+.t .tm{font-weight:600;font-size:17px}
+.t h3{font-size:clamp(38px,3.7vw,54px);margin-top:10px}
+.t p{margin-top:12px;font-size:18px}
+.t ul{list-style:none;padding:0;margin-top:14px;font-weight:500;font-size:17px}
+.t li{padding:3px 0}
+.t .pk{margin-top:auto;display:flex;justify-content:center;align-items:flex-end;gap:0;padding-top:16px;transform:translateY(20px)}
+.t .pk .p{height:300px}.t .pk .p.j{height:206px;margin-left:-26px}
+
+/* shop */
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{min-height:48px;padding:0 21px;border-radius:99px;background:var(--mist);font-weight:500}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+
+/* physicians */
+.doc{background:var(--ink);color:#fff}
+.dg{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,6vw,96px);align-items:end}
+.doc h2 em{font-style:normal;color:#8ED8F8}
+.doc .lede{font-size:clamp(20px,1.8vw,24px);margin-top:26px;max-width:640px;color:#D5E2EC}
+.card{border-radius:var(--r);background:rgba(255,255,255,.07);padding:26px}
+.ph{aspect-ratio:5/3.4;border-radius:18px;background:repeating-linear-gradient(135deg,rgba(255,255,255,.07) 0 12px,transparent 12px 24px);display:grid;place-items:center;color:#B9CBDA;font-size:16px;margin-bottom:20px}
+.card h3{font-size:30px;letter-spacing:-.02em}
+.card ul{list-style:none;padding:0;margin-top:12px;color:#D5E2EC;font-size:17px}
+.card li{padding:7px 0;border-top:1px solid rgba(255,255,255,.14)}
+
+/* stay */
+.stay{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.q{border-radius:var(--r);background:var(--mist);padding:30px;display:flex;flex-direction:column;min-height:330px}
+.q .n{font-size:clamp(60px,6.4vw,96px);font-weight:500;letter-spacing:-.05em;line-height:1}
+.q blockquote{font-size:21px;line-height:1.35;margin-top:16px;flex:1}
+.q cite{font-style:normal;font-size:16px;color:var(--ink-2);margin-top:16px}
+
+/* end */
+.end{background:linear-gradient(180deg,#fff 0%,#FFD9AE 22%,#FF9C7A 46%,#B54F96 68%,#2B2A80 86%,#0E1240 100%);color:#fff;text-align:center;padding-top:clamp(120px,14vw,220px)}
+.end h2{font-size:clamp(46px,8.2vw,132px);letter-spacing:-.05em;color:var(--ink)}
+.end .btn{margin-top:32px}
+.end p.s{color:var(--ink);margin-top:18px;font-size:20px}
+.ft{margin-top:clamp(150px,18vw,280px);padding-bottom:36px;text-align:left}
+
+@media (max-width:1040px){
+ .hero{padding-top:172px}
+ .day{grid-template-columns:1fr 1fr}
+ .grid{grid-template-columns:1fr 1fr}
+ .dg{grid-template-columns:1fr}
+ .stay{grid-template-columns:1fr}.q{min-height:0}
+}
+@media (max-width:640px){
+  .hero{padding-top:192px}
+ .hero h1{font-size:clamp(36px,11.2vw,80px)}
+ .proof{grid-template-columns:1fr 1fr}.proof div{border-left:0;border-top:1px solid var(--line);padding:16px 10px}.proof div:first-child{grid-column:1/-1;border-top:0}
+ .stage{height:310px}.sun{width:500px}.line .p{height:196px;margin-inline:-5px}.line .p.j{height:144px}
+ .line .hm{display:none}
+ .day{grid-template-columns:1fr}.t{min-height:0;padding-bottom:0}.t .pk .p{height:250px}.t .pk .p.j{height:172px}
+ .grid{grid-template-columns:1fr 1fr;gap:12px}
+ .chips{flex-wrap:nowrap;overflow-x:auto;margin-inline:calc(var(--gut)*-1);padding-inline:var(--gut);scrollbar-width:none}.chip{flex:none}
+}
+</style>
+</head>
+<body>
+<div class="bar">Free U.S. shipping on orders over $100</div>
+<header class="hdr over" data-hdr></header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <h1>Supplements for every<br>part of your day.</h1>
+    <p>A simple daily routine, organized from morning to night.</p>
+    <div class="cta"><a class="btn" href="daylight-routine.html">Build my routine</a><a class="btn ghost" href="#shop">Shop all</a></div>
+  </div>
+  <div class="stage">
+    <div class="sun"></div><div class="floor"></div>
+    <div class="line" id="hero"></div>
+  </div>
+</section>
+
+<section class="wrap"><div class="proof">
+  <div>Since 2005<span>Established</span></div>
+  <div>47 products<span>And programs</span></div>
+  <div>4.9 / 5<span>Joint Care, 39 reviews</span></div>
+  <div>Made in the USA<span>As listed on labels</span></div>
+  <div>30 days<span>Return policy</span></div>
+</div></section>
+
+<section class="sec wrap" id="day">
+  <div class="head"><h2>A routine for<br>the whole day.</h2><p>Our range is organized by time of day, so building a routine is simple.</p></div>
+  <div class="day" id="dayg"></div>
+</section>
+
+<section class="sec wrap" id="shop" style="padding-top:0">
+  <div class="head" style="margin-bottom:22px"><h2>Shop by goal</h2></div>
+  <div class="chips" id="chips" role="group" aria-label="Filter by goal"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="doc sec" id="doctors"><div class="wrap dg">
+  <div>
+    <p class="eyebrow" style="color:#8ED8F8;margin-bottom:18px">Our physicians</p>
+    <h2>Built for healthcare professionals <em>and their patients.</em></h2>
+    <p class="lede">Launched in 2005 to provide nutritional support to healthcare professionals and their patients.</p>
+    <a class="btn" href="#" style="background:#fff;color:var(--ink);margin-top:30px">Meet the physicians</a>
+  </div>
+  <div class="card">
+    <div class="ph">Portrait placeholder</div>
+    <p class="eyebrow" style="color:#8ED8F8">Title placeholder</p>
+    <h3>Physician name</h3>
+    <ul><li>Credential placeholder</li><li>Credential placeholder</li><li>Credential placeholder</li></ul>
+  </div>
+</div></section>
+
+<section class="sec wrap" id="stay">
+  <div class="head"><h2>Customer stories</h2><p>Excerpts from reviews on casupplements.com.</p></div>
+  <div class="stay">
+    <div class="q"><div class="n">15 years</div><blockquote>“I have been a faithful JOINT user for at least 15 years.”</blockquote><cite>Judy D., verified buyer, Joint Care</cite></div>
+    <div class="q"><div class="n">Loyal</div><blockquote>“Over the years, I’ve sampled other Glucosamine brands, but always return to this.”</blockquote><cite>Barbara R., verified buyer, Joint Care</cite></div>
+    <div class="q"><div class="n">Service</div><blockquote>“CA supplements was wonderful and friendly. I’ll definitely order from them again.”</blockquote><cite>Kam R., 6-SL customer</cite></div>
+  </div>
+</section>
+
+<section class="end">
+  <div class="wrap">
+    <h2>Build your routine.</h2>
+    <p class="s">Answer five questions to see a sample routine.</p>
+    <a class="btn" href="daylight-routine.html">Build my routine</a>
+    <footer class="ft" data-ft></footer>
+  </div>
+</section>
+</main>
+
+<script src="whats-inside.js"></script>
+<script src="daylight.js"></script>
+<script>
+chrome();
+hero.innerHTML=mk('total','hm')+mk('green','hm')+mk('joint')+mk('omega')+mk('calm')+mk('rest','hm');
+const D=[['a','Morning','Start strong','Daily essentials.',['total','green'],['Total Body','Green Power','Fiber Care']],
+ ['b','Midday','Stay active','Joints, bones and protein.',['joint','bone'],['Joint Care','Bone Care','Whey Power']],
+ ['c','Evening','Unwind','Omega-3, digestion and skin.',['omega','repair'],['Omega Power','Gut Repair','SkinTight']],
+ ['d','Night','Rest','Sleep and relaxation.',['rest','calm'],['Inner Calm','Rest &amp; Relax']]];
+dayg.innerHTML=D.map(d=>`<a class="t ${d[0]}" href="${d[0]=='b'?PDP:ROUTINE}"><span class="tm">${d[1]}</span><h3>${d[2]}</h3><p>${d[3]}</p><ul>${d[5].map(x=>`<li>${x}</li>`).join('')}</ul><div class="pk">${d[4].map(k=>mk(k)).join('')}</div></a>`).join('');
+const G=[['all','All products'],['move','Joints and mobility'],['sleep','Sleep'],['gut','Digestion'],['energy','Energy'],['skin','Skin and hair']];
+const order=['joint','calm','green','omega','bone','rest','fiber','whey','repair','skin','total'];
+function draw(g){grid.innerHTML=order.filter(k=>g=='all'||P[k].g.includes(g)).slice(0,4).map(card).join('')}
+chips.innerHTML=G.map((x,i)=>`<button class="chip" data-g="${x[0]}" aria-pressed="${!i}">${x[1]}</button>`).join('');
+chips.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;[...chips.children].forEach(c=>c.setAttribute('aria-pressed',c==b));draw(b.dataset.g)};draw('all');
+</script>
+</body>
+</html>
